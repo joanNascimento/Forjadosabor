@@ -1,0 +1,30 @@
+
+/* manicoba.css */
+
+.manicoba-theme .hero-category {
+    background-color: var(--color-earthy-green);
+    color: var(--color-text-light);
+}
+
+.manicoba-theme .product-category h3 {
+    border-bottom-color: var(--color-earthy-green);
+}
+
+.manicoba-theme .product-item-content .price {
+    color: var(--color-earthy-green);
+}
+
+.manicoba-theme .navbar .logo,
+.manicoba-theme .navbar .nav-links a:hover {
+    color: var(--color-earthy-green);
+}
+
+.manicoba-theme .btn-primary {
+    background-color: var(--color-orange);
+}
+
+.manicoba-theme .btn-primary:hover {
+    background-color: #e68900;
+}
+
+

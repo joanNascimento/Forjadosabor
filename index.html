@@ -3,62 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forja do Sabor - Monte Sua Salada</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Forja do Sabor - Página Inicial</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Forja do Sabor</h1>
-        <p>Monte sua salada do seu jeito!</p>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">Forja do Sabor</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="saladas.html">Monte sua Salada</a></li>
+                    <li><a href="gourmet.html">Tábuas & Combos Gourmet</a></li>
+                    <li><a href="manicoba.html">Maniçoba da Forja</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="como-pedir.html">Como Pedir</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <form id="saladaForm">
-            <section>
-                <h2>Escolha uma Base</h2>
-                <label><input type="radio" name="base" value="Alface Americana" required> Alface Americana</label>
-                <label><input type="radio" name="base" value="Alface Simples e Roxa"> Alface Simples e Roxa</label>
-                <label><input type="radio" name="base" value="Mix de folhas"> Mix de folhas</label>
-            </section>
-
-            <section>
-                <h2>Escolha uma Proteína</h2>
-                <label><input type="radio" name="proteina" value="Frango" required> Frango</label>
-                <label><input type="radio" name="proteina" value="Peito de Peru"> Peito de Peru</label>
-                <label><input type="radio" name="proteina" value="Mignon"> Mignon</label>
-                <label><input type="radio" name="proteina" value="Peixe"> Peixe</label>
-            </section>
-
-            <section>
-                <h2>Escolha até 5 Extras</h2>
-                <div id="extras">
-                    <label><input type="checkbox" name="extras" value="Repolho"> Repolho</label>
-                    <label><input type="checkbox" name="extras" value="Pimentão"> Pimentão</label>
-                    <label><input type="checkbox" name="extras" value="Cebola"> Cebola</label>
-                    <label><input type="checkbox" name="extras" value="Croutons"> Croutons</label>
-                    <label><input type="checkbox" name="extras" value="Azeitona"> Azeitona</label>
-                    <label><input type="checkbox" name="extras" value="Pepino"> Pepino</label>
-                    <label><input type="checkbox" name="extras" value="Tomate"> Tomate</label>
-                    <label><input type="checkbox" name="extras" value="Queijo"> Queijo</label>
+        <section id="hero" class="hero-section">
+            <div class="banner-carousel">
+                <div class="banner-item active">
+                    <img src="assets/imagens/banner-salada.jpg" alt="Salada Fresca">
+                    <div class="banner-content">
+                        <h1>Monte Sua Salada</h1>
+                        <p>Crie sua combinação perfeita com ingredientes frescos.</p>
+                        <a href="saladas.html" class="btn btn-primary">Monte sua Salada</a>
+                    </div>
                 </div>
-            </section>
+                <div class="banner-item">
+                    <img src="assets/imagens/banner-tabua.jpg" alt="Tábuas Gourmet">
+                    <div class="banner-content">
+                        <h1>Tábuas & Combos Gourmet</h1>
+                        <p>Experiências gastronômicas para momentos especiais.</p>
+                        <a href="gourmet.html" class="btn btn-primary">Descubra</a>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="assets/imagens/banner-manicoba.jpg" alt="Maniçoba da Forja">
+                    <div class="banner-content">
+                        <h1>Maniçoba da Forja</h1>
+                        <p>O sabor autêntico da tradição paraense.</p>
+                        <a href="manicoba.html" class="btn btn-primary">Peça Agora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button class="prev"></button>
+                <button class="next"></button>
+            </div>
+        </section>
 
-            <button type="submit">Finalizar Pedido</button>
-        </form>
-
-        <section id="resumoPedido">
-            <h2>Resumo do Pedido</h2>
-            <p><strong>Planos Disponíveis:</strong></p>
-            <ul>
-                <li>Essencial: 1 base + 1 proteína + até 3 extras – R$ 45</li>
-                <li>Completo: 1 base + 1 proteína + até 5 extras – R$ 55</li>
-                <li>Premium: proteína nobre ou peixe – R$ 65</li>
-            </ul>
-            <hr>
-            <p id="resumo"></p>
+        <section id="quick-access" class="quick-access-section">
+            <div class="container">
+                <h2>Acesso Rápido</h2>
+                <div class="access-buttons">
+                    <a href="saladas.html" class="btn btn-category green">
+                        <img src="assets/icones/salad-icon.png" alt="Ícone Salada">
+                        <span>Monte sua Salada</span>
+                    </a>
+                    <a href="gourmet.html" class="btn btn-category brown">
+                        <img src="assets/icones/gourmet-icon.png" alt="Ícone Gourmet">
+                        <span>Tábuas & Combos Gourmet</span>
+                    </a>
+                    <a href="manicoba.html" class="btn btn-category earthy">
+                        <img src="assets/icones/manicoba-icon.png" alt="Ícone Maniçoba">
+                        <span>Maniçoba da Forja</span>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <div class="whatsapp-button">
+        <a href="https://wa.me/5591985148050" target="_blank">
+            <img src="assets/icones/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Forja do Sabor. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
+

@@ -1,0 +1,42 @@
+
+/* como-pedir.css */
+
+.como-pedir-theme .hero-category {
+    background-color: var(--color-green-light);
+    color: var(--color-text-dark);
+}
+
+.como-pedir-theme .how-to-order-section h2 {
+    color: var(--color-green-dark);
+}
+
+.como-pedir-theme .step-card .icon {
+    background-color: var(--color-green-light);
+}
+
+.como-pedir-theme .step-card h3 {
+    color: var(--color-green-dark);
+}
+
+.como-pedir-theme .info-block {
+    background-color: var(--color-neutral-light);
+}
+
+.como-pedir-theme .info-block h3 {
+    color: var(--color-green-dark);
+}
+
+.como-pedir-theme .info-block .btn-primary {
+    background-color: var(--color-orange);
+}
+
+.como-pedir-theme .info-block .btn-primary:hover {
+    background-color: #e68900;
+}
+
+.como-pedir-theme .navbar .logo,
+.como-pedir-theme .navbar .nav-links a:hover {
+    color: var(--color-green-dark);
+}
+
+

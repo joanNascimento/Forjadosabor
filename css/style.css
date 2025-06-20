@@ -1,0 +1,789 @@
+
+/* style.css */
+
+:root {
+    --color-green-light: #81C784; /* Verde claro */
+    --color-green-dark: #2E7D32; /* Verde escuro */
+    --color-orange: #FF9800; /* Laranja */
+    --color-wine: #800020; /* Vinho */
+    --color-wood-brown: #8B4513; /* Marrom madeira */
+    --color-gold-soft: #DAA520; /* Dourado suave */
+    --color-earthy-green: #556B2F; /* Verde terroso */
+    --color-neutral-light: #F5F5DC; /* Bege */
+    --color-neutral-dark: #36454F; /* Cinza carvão */
+    --color-red-gourmet: #B22222; /* Vermelho gourmet */
+    --color-text-dark: #333;
+    --color-text-light: #f4f4f4;
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #222;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header e Navegação */
+.navbar {
+    background-color: var(--color-bg-light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-green-dark);
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 30px;
+}
+
+.navbar .nav-links a {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--color-orange);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--color-text-dark);
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+/* Responsividade do Header */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color-bg-light);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos gerais de botões */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-orange);
+    color: var(--color-text-light);
+}
+
+.btn-primary:hover {
+    background-color: #e68900;
+}
+
+.btn-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-category img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.btn-category.green {
+    background-color: var(--color-green-dark);
+}
+
+.btn-category.green:hover {
+    background-color: #256a2a;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-category.brown {
+    background-color: var(--color-wood-brown);
+}
+
+.btn-category.brown:hover {
+    background-color: #7a3b0f;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-category.earthy {
+    background-color: var(--color-earthy-green);
+}
+
+.btn-category.earthy:hover {
+    background-color: #4a5a2a;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Seções */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--color-green-dark);
+}
+
+/* Hero Section (index.html) */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    height: 600px; /* Altura fixa para o banner */
+}
+
+.banner-carousel {
+    display: flex;
+    width: 300%; /* 3 banners */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.banner-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6); /* Escurece a imagem para o texto se destacar */
+}
+
+.banner-content {
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.banner-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.carousel-nav button {
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-nav button.active {
+    background-color: var(--color-orange);
+}
+
+/* Quick Access Section (index.html) */
+.quick-access-section {
+    background-color: var(--color-neutral-light);
+    padding: 40px 0;
+}
+
+.quick-access-section h2 {
+    color: var(--color-text-dark);
+}
+
+.access-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Estilos para as páginas de categoria */
+.category-page .hero-category {
+    padding: 80px 0;
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.category-page .hero-category h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.category-page .hero-category p {
+    font-size: 24px;
+}
+
+.category-page .content-section {
+    padding: 40px 0;
+}
+
+.category-page .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.category-page .product-card {
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.category-page .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-page .product-card h3 {
+    font-size: 24px;
+    margin: 15px 0 10px;
+}
+
+.category-page .product-card p {
+    padding: 0 15px 15px;
+    color: var(--color-text-dark);
+}
+
+.category-page .product-card .price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Cores específicas por categoria */
+/* Saladas */
+.saladas-theme .navbar .logo,
+.saladas-theme .navbar .nav-links a:hover {
+    color: var(--color-green-dark);
+}
+.saladas-theme .hero-category {
+    background-color: var(--color-green-light);
+}
+.saladas-theme .btn-primary {
+    background-color: var(--color-orange);
+}
+.saladas-theme .btn-primary:hover {
+    background-color: #e68900;
+}
+
+/* Gourmet */
+.gourmet-theme .navbar .logo,
+.gourmet-theme .navbar .nav-links a:hover {
+    color: var(--color-wine);
+}
+.gourmet-theme .hero-category {
+    background-color: var(--color-wine);
+}
+.gourmet-theme .btn-primary {
+    background-color: var(--color-gold-soft);
+    color: var(--color-text-dark);
+}
+.gourmet-theme .btn-primary:hover {
+    background-color: #c4911a;
+}
+
+/* Maniçoba */
+.manicoba-theme .navbar .logo,
+.manicoba-theme .navbar .nav-links a:hover {
+    color: var(--color-earthy-green);
+}
+.manicoba-theme .hero-category {
+    background-color: var(--color-earthy-green);
+}
+.manicoba-theme .btn-primary {
+    background-color: var(--color-orange);
+}
+.manicoba-theme .btn-primary:hover {
+    background-color: #e68900;
+}
+
+/* Quem Somos */
+.quem-somos-theme .navbar .logo,
+.quem-somos-theme .navbar .nav-links a:hover {
+    color: var(--color-red-gourmet);
+}
+.quem-somos-theme .hero-category {
+    background-color: var(--color-neutral-dark);
+}
+.quem-somos-theme .btn-primary {
+    background-color: var(--color-red-gourmet);
+}
+.quem-somos-theme .btn-primary:hover {
+    background-color: #a01f1f;
+}
+
+/* Como Pedir */
+.como-pedir-theme .navbar .logo,
+.como-pedir-theme .navbar .nav-links a:hover {
+    color: var(--color-green-dark);
+}
+.como-pedir-theme .hero-category {
+    background-color: var(--color-green-light);
+}
+.como-pedir-theme .btn-primary {
+    background-color: var(--color-orange);
+}
+.como-pedir-theme .btn-primary:hover {
+    background-color: #e68900;
+}
+
+/* Formulário de Saladas */
+.salad-form-section {
+    background-color: var(--color-neutral-light);
+    padding: 40px 0;
+}
+
+.salad-form-section h2 {
+    color: var(--color-green-dark);
+}
+
+.salad-form-container {
+    background-color: var(--color-bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--color-green-dark);
+}
+
+.form-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.form-option input[type="radio"],
+.form-option input[type="checkbox"] {
+    display: none;
+}
+
+.form-option label {
+    display: block;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: normal;
+    color: var(--color-text-dark);
+    text-align: center;
+}
+
+.form-option label:hover {
+    border-color: var(--color-orange);
+    background-color: #fff5e6;
+}
+
+.form-option input[type="radio"]:checked + label,
+.form-option input[type="checkbox"]:checked + label {
+    border-color: var(--color-green-dark);
+    background-color: var(--color-green-light);
+    color: var(--color-text-light);
+}
+
+.form-option input[type="radio"]:checked + label:hover,
+.form-option input[type="checkbox"]:checked + label:hover {
+    background-color: var(--color-green-dark);
+}
+
+.form-option input[type="checkbox"]:disabled + label {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #eee;
+}
+
+.price-plans {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.price-plans label {
+    color: var(--color-green-dark);
+}
+
+.price-display {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-orange);
+}
+
+.order-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.order-button-container .btn-primary {
+    padding: 15px 30px;
+    font-size: 20px;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Estilos para as páginas de produtos (Gourmet e Maniçoba) */
+.product-category {
+    margin-bottom: 40px;
+}
+
+.product-category h3 {
+    font-size: 28px;
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-orange);
+    padding-bottom: 10px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-item {
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.product-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-item-content {
+    padding: 15px;
+}
+
+.product-item-content h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--color-text-dark);
+}
+
+.product-item-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.product-item-content .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--color-orange);
+}
+
+/* Quem Somos */
+.about-section .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-section .text-block {
+    background-color: var(--color-bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.about-section .text-block h3 {
+    font-size: 28px;
+    color: var(--color-red-gourmet);
+    margin-bottom: 15px;
+}
+
+.about-section .text-block p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+}
+
+/* Como Pedir */
+.how-to-order-section .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.how-to-order-section .step-card {
+    background-color: var(--color-bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.how-to-order-section .step-card .icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: var(--color-green-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.how-to-order-section .step-card .icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.how-to-order-section .step-card h3 {
+    font-size: 24px;
+    color: var(--color-green-dark);
+    margin-bottom: 15px;
+}
+
+.how-to-order-section .step-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.how-to-order-section .info-block {
+    background-color: var(--color-neutral-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.how-to-order-section .info-block h3 {
+    color: var(--color-green-dark);
+    margin-bottom: 15px;
+}
+
+.how-to-order-section .info-block p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-text-dark);
+}
+
+.how-to-order-section .info-block .btn-primary {
+    margin-top: 20px;
+}
+
+/* Responsividade Geral */
+@media (max-width: 992px) {
+    .hero-section {
+        height: 500px;
+    }
+    .banner-content h1 {
+        font-size: 38px;
+    }
+    .banner-content p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 400px;
+    }
+    .banner-content h1 {
+        font-size: 32px;
+    }
+    .banner-content p {
+        font-size: 18px;
+    }
+    section {
+        padding: 40px 0;
+    }
+    section h2 {
+        font-size: 30px;
+    }
+    .access-buttons {
+        grid-template-columns: 1fr;
+    }
+    .salad-form-container {
+        padding: 20px;
+    }
+    .form-options {
+        grid-template-columns: 1fr;
+    }
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+    .about-section .text-block h3 {
+        font-size: 24px;
+    }
+    .how-to-order-section .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 300px;
+    }
+    .banner-content h1 {
+        font-size: 28px;
+    }
+    .banner-content p {
+        font-size: 16px;
+    }
+    .navbar .logo {
+        font-size: 20px;
+    }
+    .whatsapp-button img {
+        width: 50px;
+        height: 50px;
+    }
+}
+

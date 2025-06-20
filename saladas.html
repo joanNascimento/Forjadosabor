@@ -1,1 +1,170 @@
-<!-- Conteúdo de exemplo para saladas.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte sua Salada - Forja do Sabor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/saladas.css"> <!-- Estilo específico para saladas -->
+</head>
+<body class="saladas-theme">
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">Forja do Sabor</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="saladas.html">Monte sua Salada</a></li>
+                    <li><a href="gourmet.html">Tábuas & Combos Gourmet</a></li>
+                    <li><a href="manicoba.html">Maniçoba da Forja</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="como-pedir.html">Como Pedir</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-category">
+            <div class="container">
+                <h1>Monte sua Salada</h1>
+                <p>Crie sua combinação perfeita com ingredientes frescos e saudáveis.</p>
+            </div>
+        </section>
+
+        <section class="salad-form-section">
+            <div class="container">
+                <h2>Sua Salada Personalizada</h2>
+                <div class="salad-form-container">
+                    <div class="form-group">
+                        <label>1. Escolha a Base (Obrigatório)</label>
+                        <div class="form-options">
+                            <div class="form-option">
+                                <input type="radio" id="base-americana" name="base" value="Alface Americana" required>
+                                <label for="base-americana">Alface Americana</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="radio" id="base-simples-roxa" name="base" value="Alface Simples e Roxa">
+                                <label for="base-simples-roxa">Alface Simples e Roxa</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="radio" id="base-mix" name="base" value="Mix de Folhas">
+                                <label for="base-mix">Mix de Folhas</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>2. Escolha a Proteína (Obrigatório)</label>
+                        <div class="form-options">
+                            <div class="form-option">
+                                <input type="radio" id="proteina-frango" name="proteina" value="Frango" required>
+                                <label for="proteina-frango">Frango</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="radio" id="proteina-peru" name="proteina" value="Peito de Peru">
+                                <label for="proteina-peru">Peito de Peru</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="radio" id="proteina-mignon" name="proteina" value="Mignon">
+                                <label for="proteina-mignon">Mignon</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="radio" id="proteina-peixe" name="proteina" value="Peixe">
+                                <label for="proteina-peixe">Peixe</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3. Escolha até 5 Extras</label>
+                        <div class="form-options">
+                            <div class="form-option">
+                                <input type="checkbox" id="extra-repolho" name="extra" value="Repolho">
+                                <label for="extra-repolho">Repolho</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="checkbox" id="extra-pimentao" name="extra" value="Pimentão">
+                                <label for="extra-pimentao">Pimentão</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="checkbox" id="extra-cebola" name="extra" value="Cebola">
+                                <label for="extra-cebola">Cebola</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="checkbox" id="extra-croutons" name="extra" value="Croutons">
+                                <label for="extra-croutons">Croutons</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="checkbox" id="extra-azeitona" name="extra" value="Azeitona">
+                                <label for="extra-azeitona">Azeitona</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="checkbox" id="extra-pepino" name="extra" value="Pepino">
+                                <label for="extra-pepino">Pepino</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="checkbox" id="extra-tomate" name="extra" value="Tomate">
+                                <label for="extra-tomate">Tomate</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="checkbox" id="extra-queijo" name="extra" value="Queijo">
+                                <label for="extra-queijo">Queijo</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group price-plans">
+                        <label>4. Escolha seu Plano</label>
+                        <div class="form-options">
+                            <div class="form-option">
+                                <input type="radio" id="plano-essencial" name="plano" value="Essencial" data-price="45" required>
+                                <label for="plano-essencial">Essencial (até 3 extras) - R$ 45</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="radio" id="plano-completo" name="plano" value="Completo" data-price="55">
+                                <label for="plano-completo">Completo (até 5 extras) - R$ 55</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="radio" id="plano-premium" name="plano" value="Premium" data-price="65">
+                                <label for="plano-premium">Premium (proteína nobre) - R$ 65</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="price-display">
+                        Total: R$ <span id="total-price">0.00</span>
+                    </div>
+
+                    <div class="error-message" id="error-message"></div>
+
+                    <div class="order-button-container">
+                        <button type="button" id="whatsapp-order-btn" class="btn btn-primary">Finalizar pedido via WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="whatsapp-button">
+        <a href="https://wa.me/5591985148050" target="_blank">
+            <img src="assets/icones/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Forja do Sabor. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/saladas.js"></script> <!-- Script específico para saladas -->
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+
+/* quem-somos.css */
+
+.quem-somos-theme .hero-category {
+    background-color: var(--color-neutral-dark);
+    color: var(--color-text-light);
+}
+
+.quem-somos-theme .text-block h3 {
+    color: var(--color-red-gourmet);
+}
+
+.quem-somos-theme .navbar .logo,
+.quem-somos-theme .navbar .nav-links a:hover {
+    color: var(--color-red-gourmet);
+}
+
+.quem-somos-theme .btn-primary {
+    background-color: var(--color-red-gourmet);
+}
+
+.quem-somos-theme .btn-primary:hover {
+    background-color: #a01f1f;
+}
+
+

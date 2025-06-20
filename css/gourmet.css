@@ -1,0 +1,31 @@
+
+/* gourmet.css */
+
+.gourmet-theme .hero-category {
+    background-color: var(--color-wine);
+    color: var(--color-text-light);
+}
+
+.gourmet-theme .product-category h3 {
+    border-bottom-color: var(--color-wine);
+}
+
+.gourmet-theme .product-item-content .price {
+    color: var(--color-wine);
+}
+
+.gourmet-theme .navbar .logo,
+.gourmet-theme .navbar .nav-links a:hover {
+    color: var(--color-wine);
+}
+
+.gourmet-theme .btn-primary {
+    background-color: var(--color-gold-soft);
+    color: var(--color-text-dark);
+}
+
+.gourmet-theme .btn-primary:hover {
+    background-color: #c4911a;
+}
+
+

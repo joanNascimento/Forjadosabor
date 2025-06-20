@@ -1,0 +1,50 @@
+
+/* saladas.css */
+
+.saladas-theme .hero-category {
+    background-color: var(--color-green-light);
+    color: var(--color-text-light);
+}
+
+.saladas-theme .salad-form-section h2 {
+    color: var(--color-green-dark);
+}
+
+.saladas-theme .form-group label {
+    color: var(--color-green-dark);
+}
+
+.saladas-theme .form-option label:hover {
+    border-color: var(--color-orange);
+    background-color: #fff5e6;
+}
+
+.saladas-theme .form-option input[type="radio"]:checked + label,
+.saladas-theme .form-option input[type="checkbox"]:checked + label {
+    border-color: var(--color-green-dark);
+    background-color: var(--color-green-light);
+    color: var(--color-text-light);
+}
+
+.saladas-theme .form-option input[type="radio"]:checked + label:hover,
+.saladas-theme .form-option input[type="checkbox"]:checked + label:hover {
+    background-color: var(--color-green-dark);
+}
+
+.saladas-theme .price-plans label {
+    color: var(--color-green-dark);
+}
+
+.saladas-theme .price-display {
+    color: var(--color-orange);
+}
+
+.saladas-theme .order-button-container .btn-primary {
+    background-color: var(--color-orange);
+}
+
+.saladas-theme .order-button-container .btn-primary:hover {
+    background-color: #e68900;
+}
+
+
