@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forja do Sabor - Monte Sua Salada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Forja do Sabor</h1>
+        <p>Monte sua salada do seu jeito!</p>
+    </header>
+
+    <main>
+        <form id="saladaForm">
+            <section>
+                <h2>Escolha uma Base</h2>
+                <label><input type="radio" name="base" value="Alface Americana" required> Alface Americana</label>
+                <label><input type="radio" name="base" value="Alface Simples e Roxa"> Alface Simples e Roxa</label>
+                <label><input type="radio" name="base" value="Mix de folhas"> Mix de folhas</label>
+            </section>
+
+            <section>
+                <h2>Escolha uma Proteína</h2>
+                <label><input type="radio" name="proteina" value="Frango" required> Frango</label>
+                <label><input type="radio" name="proteina" value="Peito de Peru"> Peito de Peru</label>
+                <label><input type="radio" name="proteina" value="Mignon"> Mignon</label>
+                <label><input type="radio" name="proteina" value="Peixe"> Peixe</label>
+            </section>
+
+            <section>
+                <h2>Escolha até 5 Extras</h2>
+                <div id="extras">
+                    <label><input type="checkbox" name="extras" value="Repolho"> Repolho</label>
+                    <label><input type="checkbox" name="extras" value="Pimentão"> Pimentão</label>
+                    <label><input type="checkbox" name="extras" value="Cebola"> Cebola</label>
+                    <label><input type="checkbox" name="extras" value="Croutons"> Croutons</label>
+                    <label><input type="checkbox" name="extras" value="Azeitona"> Azeitona</label>
+                    <label><input type="checkbox" name="extras" value="Pepino"> Pepino</label>
+                    <label><input type="checkbox" name="extras" value="Tomate"> Tomate</label>
+                    <label><input type="checkbox" name="extras" value="Queijo"> Queijo</label>
+                </div>
+            </section>
+
+            <button type="submit">Finalizar Pedido</button>
+        </form>
+
+        <section id="resumoPedido">
+            <h2>Resumo do Pedido</h2>
+            <p><strong>Planos Disponíveis:</strong></p>
+            <ul>
+                <li>Essencial: 1 base + 1 proteína + até 3 extras – R$ 45</li>
+                <li>Completo: 1 base + 1 proteína + até 5 extras – R$ 55</li>
+                <li>Premium: proteína nobre ou peixe – R$ 65</li>
+            </ul>
+            <hr>
+            <p id="resumo"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
