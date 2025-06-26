@@ -1,42 +1,320 @@
-
-/* como-pedir.css */
-
-.como-pedir-theme .hero-category {
-    background-color: var(--color-green-light);
-    color: var(--color-text-dark);
+/* Como Pedir - Específico */
+.como-pedir-hero {
+    background-image: url('../assets/imagens/CALDO-CAPA.jpg'); /* Pode ser uma imagem mais genérica ou relacionada a pedidos */
 }
 
-.como-pedir-theme .how-to-order-section h2 {
-    color: var(--color-green-dark);
+.steps-section {
+    padding: 60px 0;
+    background-color: var(--light-bg);
 }
 
-.como-pedir-theme .step-card .icon {
-    background-color: var(--color-green-light);
+.steps-section .info-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
 }
 
-.como-pedir-theme .step-card h3 {
-    color: var(--color-green-dark);
+.steps-section .info-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
-.como-pedir-theme .info-block {
-    background-color: var(--color-neutral-light);
+.steps-section .info-content p {
+    font-size: 1.1rem;
+    color: #666;
 }
 
-.como-pedir-theme .info-block h3 {
-    color: var(--color-green-dark);
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-.como-pedir-theme .info-block .btn-primary {
-    background-color: var(--color-orange);
+.step-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    padding-top: 60px; /* Espaço para o número do passo */
 }
 
-.como-pedir-theme .info-block .btn-primary:hover {
-    background-color: #e68900;
+.step-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.como-pedir-theme .navbar .logo,
-.como-pedir-theme .navbar .nav-links a:hover {
-    color: var(--color-green-dark);
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.step-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.step-item h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.step-item p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.whatsapp-section {
+    padding: 60px 0;
+    background-color: #25D366; /* WhatsApp Green */
+    color: var(--white);
+    text-align: center;
+}
+
+.whatsapp-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.whatsapp-content h2 {
+    font-size: 2.8rem;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-whatsapp-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #128C7E; /* WhatsApp Dark Green */
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp-large:hover {
+    background-color: #075E54;
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp-large i {
+    margin-right: 15px;
+    font-size: 1.8rem;
+}
+
+.info-section {
+    padding: 60px 0;
+    background-color: var(--light-bg);
+}
+
+.info-section .info-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.info-section .info-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.info-section .info-content p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.info-card h3 i {
+    margin-right: 15px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.info-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.info-card .highlight {
+    font-weight: bold;
+    color: var(--dark-bg);
+}
+
+.contact-info {
+    padding: 40px 0;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+}
+
+.contact-info h3 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.contact-info .phone {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 5px;
+}
+
+.contact-info strong {
+    color: var(--accent-color);
 }
 
 
+/* Media Queries */
+@media (max-width: 768px) {
+    .steps-section .info-content h2,
+    .info-section .info-content h2 {
+        font-size: 2rem;
+    }
+    .steps-section .info-content p,
+    .info-section .info-content p {
+        font-size: 1rem;
+    }
+    .step-item {
+        padding: 50px 20px 30px 20px;
+    }
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+        top: -15px;
+    }
+    .step-icon {
+        font-size: 2.5rem;
+    }
+    .step-item h3 {
+        font-size: 1.3rem;
+    }
+    .whatsapp-content h2 {
+        font-size: 2.2rem;
+    }
+    .whatsapp-content p {
+        font-size: 1.1rem;
+    }
+    .btn-whatsapp-large {
+        padding: 12px 25px;
+        font-size: 1.2rem;
+    }
+    .btn-whatsapp-large i {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    .info-card h3 {
+        font-size: 1.4rem;
+    }
+    .info-card h3 i {
+        font-size: 1.8rem;
+    }
+    .info-card p {
+        font-size: 0.95rem;
+    }
+    .contact-info h3 {
+        font-size: 2rem;
+    }
+    .contact-info .phone {
+        font-size: 1.8rem;
+    }
+    .contact-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps-section .info-content h2,
+    .info-section .info-content h2 {
+        font-size: 1.8rem;
+    }
+    .steps-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .whatsapp-content h2 {
+        font-size: 1.8rem;
+    }
+    .whatsapp-content p {
+        font-size: 1rem;
+    }
+    .btn-whatsapp-large {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+    .info-card h3 {
+        font-size: 1.3rem;
+    }
+    .contact-info h3 {
+        font-size: 1.8rem;
+    }
+    .contact-info .phone {
+        font-size: 1.6rem;
+    }
+}
