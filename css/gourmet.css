@@ -1,31 +1,218 @@
-
-/* gourmet.css */
-
-.gourmet-theme .hero-category {
-    background-color: var(--color-wine);
-    color: var(--color-text-light);
+/* Gourmet - Específico */
+.gourmet-hero {
+    background-image: url('../assets/imagens/FRIOS-CAPA.jpg');
 }
 
-.gourmet-theme .product-category h3 {
-    border-bottom-color: var(--color-wine);
+.gourmet-features {
+    padding: 60px 0;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
 }
 
-.gourmet-theme .product-item-content .price {
-    color: var(--color-wine);
+.gourmet-features .section-title {
+    color: var(--accent-color);
 }
 
-.gourmet-theme .navbar .logo,
-.gourmet-theme .navbar .nav-links a:hover {
-    color: var(--color-wine);
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.gourmet-theme .btn-primary {
-    background-color: var(--color-gold-soft);
-    color: var(--color-text-dark);
+.feature-item {
+    background-color: rgba(255, 255, 255, 0.08); /* Fundo translúcido */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.gourmet-theme .btn-primary:hover {
-    background-color: #c4911a;
+.feature-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
+.feature-item i {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
 
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.gourmet-section {
+    padding: 60px 0;
+    background-color: var(--light-bg);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.category-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.category-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.gourmet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.gourmet-item {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.gourmet-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gourmet-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.gourmet-content {
+    padding: 20px;
+    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espaça os elementos */
+}
+
+.gourmet-content h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.gourmet-content p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que a descrição se estenda */
+}
+
+.gourmet-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.btn-gourmet {
+    display: block; /* Ocupa a largura total */
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #25D366; /* WhatsApp Green */
+    color: var(--white);
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-gourmet:hover {
+    background-color: #1DA851;
+}
+
+.btn-gourmet i {
+    margin-right: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .gourmet-features .section-title {
+        font-size: 2.2rem;
+    }
+    .feature-item {
+        padding: 25px;
+    }
+    .feature-item i {
+        font-size: 3rem;
+    }
+    .feature-item h3 {
+        font-size: 1.3rem;
+    }
+    .category-header h2 {
+        font-size: 2rem;
+    }
+    .category-header p {
+        font-size: 1rem;
+    }
+    .gourmet-item img {
+        height: 180px;
+    }
+    .gourmet-content h3 {
+        font-size: 1.4rem;
+    }
+    .gourmet-price {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gourmet-features .section-title {
+        font-size: 1.8rem;
+    }
+    .feature-item {
+        padding: 20px;
+    }
+    .feature-item i {
+        font-size: 2.5rem;
+    }
+    .feature-item h3 {
+        font-size: 1.2rem;
+    }
+    .category-header h2 {
+        font-size: 1.8rem;
+    }
+    .category-header p {
+        font-size: 0.9rem;
+    }
+    .gourmet-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+    .gourmet-item img {
+        height: 200px; /* Mantém a imagem visível */
+    }
+    .gourmet-price {
+        font-size: 1.4rem;
+    }
+    .btn-gourmet {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
