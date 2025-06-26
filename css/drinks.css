@@ -1,0 +1,173 @@
+/* Drinks - Específico */
+.drinks-hero {
+    background-image: url('../assets/imagens/SALADA-CAPA.jpg'); /* Substitua por uma imagem de drinks quando tiver uma */
+    background-color: #333; /* Fundo escuro para a atmosfera de suspense */
+    height: 80vh; /* Um pouco mais alto para o suspense */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden; /* Para garantir que as animações fiquem contidas */
+}
+
+.drinks-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Overlay mais escuro */
+    z-index: 0;
+}
+
+/* Adicione um efeito sutil de fumaça ou brilho */
+.drinks-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0.5;
+    animation: pulse-glow 3s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes pulse-glow {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.05); opacity: 0.7; }
+}
+
+
+.drinks-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 900px;
+}
+
+.drinks-hero .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    color: var(--accent-color); /* Dourado para o título */
+    animation: fade-in 2s ease-out;
+}
+
+.drinks-hero .hero-content p {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    animation: slide-up 1.5s ease-out;
+}
+
+.drinks-teaser {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color); /* Marrom para os teasers */
+    animation: fade-in 2.5s ease-out;
+}
+
+.drinks-teaser span {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.coming-soon-btn {
+    background-color: var(--secondary-color); /* Vermelho para o botão de "Em Breve" */
+    cursor: not-allowed;
+    opacity: 0.7;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    padding: 15px 35px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: bounce-in 1.8s ease-out;
+}
+
+.coming-soon-btn:hover {
+    background-color: var(--secondary-color); /* Sem alteração no hover para desabilitado */
+    transform: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animações */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce-in {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .drinks-hero {
+        height: 70vh;
+    }
+    .drinks-hero .hero-content h1 {
+        font-size: 3rem;
+    }
+    .drinks-hero .hero-content p {
+        font-size: 1.3rem;
+    }
+    .drinks-teaser {
+        gap: 15px;
+        font-size: 1.1rem;
+    }
+    .coming-soon-btn {
+        font-size: 1.3rem;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .drinks-hero {
+        height: 60vh;
+    }
+    .drinks-hero .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    .drinks-hero .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    .drinks-teaser {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.95rem;
+    }
+    .drinks-teaser span {
+        padding: 8px 15px;
+    }
+    .coming-soon-btn {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        margin-top: 30px;
+    }
+}
