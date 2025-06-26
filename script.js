@@ -1,34 +1,83 @@
-document.getElementById('saladaForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    // Menu Hamburguer
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
 
-    const base = document.querySelector('input[name="base"]:checked');
-    const proteina = document.querySelector('input[name="proteina"]:checked');
-    const extras = [...document.querySelectorAll('input[name="extras"]:checked')];
+    if (hamburger && navList) {
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            hamburger.classList.toggle('active'); // Adiciona classe para animar o ícone
+        });
 
-    if (extras.length > 5) {
-        alert("Você pode escolher no máximo 5 extras.");
-        return;
+        // Fechar o menu ao clicar em um item (mobile)
+        navList.querySelectorAll('a').forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) { // Apenas em telas menores
+                    navList.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
     }
 
-    const preco = extras.length <= 3 ? '45,00' :
-        (proteina.value === 'Peixe' || proteina.value === 'Mignon') ? '65,00' : '55,00';
+    // Carrossel (somente na página inicial)
+    const carousel = document.getElementById('carousel');
+    if (carousel) {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevButton = document.getElementById('carousel-prev');
+        const nextButton = document.getElementById('carousel-next');
+        let currentIndex = 0;
 
-    const resumo = `
-        Base: ${base?.value}<br>
-        Proteína: ${proteina?.value}<br>
-        Extras: ${extras.map(e => e.value).join(', ')}<br>
-        Preço: R$ ${preco}
-    `;
-    document.getElementById('resumo').innerHTML = resumo;
-});
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
 
-// Limita a seleção de extras a 5
-document.querySelectorAll('input[name="extras"]').forEach(cb => {
-    cb.addEventListener('change', () => {
-        const checked = document.querySelectorAll('input[name="extras"]:checked');
-        if (checked.length > 5) {
-            cb.checked = false;
-            alert("Você só pode escolher até 5 extras.");
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        if (prevButton && nextButton) {
+            prevButton.addEventListener('click', prevSlide);
+            nextButton.addEventListener('click', nextSlide);
+        }
+
+        // Auto-play do carrossel
+        let autoPlayInterval = setInterval(nextSlide, 5000); // Muda a cada 5 segundos
+
+        // Pausar auto-play no hover
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        });
+
+        showSlide(currentIndex); // Mostra o slide inicial
+    }
+
+    // Marca o link ativo na navegação
+    const currentPath = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        } else if (currentPath === '' && linkPath === 'index.html') {
+            // Caso especial para a página inicial acessada sem "index.html" no path
+            link.classList.add('active');
         }
     });
 });
