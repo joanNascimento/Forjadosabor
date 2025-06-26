@@ -1,45 +1,222 @@
-
-/* manicoba.css */
-
-.manicoba-theme .hero-category {
-    background-color: var(--color-earthy-green);
-    color: var(--color-text-light);
+/* Maniçoba - Específico */
+.manicoba-hero {
+    background-image: url('../assets/imagens/MANICOBA-CAPA.jpg');
 }
 
-.manicoba-theme .product-category h3 {
-    border-bottom-color: var(--color-earthy-green);
+.manicoba-tradition {
+    padding: 60px 0;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
 }
 
-.manicoba-theme .product-item-content .price {
-    color: var(--color-earthy-green);
+.tradition-content {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
 }
 
-.manicoba-theme .navbar .logo,
-.manicoba-theme .navbar .nav-links a:hover {
-    color: var(--color-earthy-green);
+.tradition-content h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
 }
 
-.manicoba-theme .btn-primary {
-    background-color: var(--color-orange);
+.tradition-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.manicoba-theme .btn-primary:hover {
-    background-color: #e68900;
-}
-.banner-manicoba {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.banner-manicoba img.imagem-banner {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-<section class="banner-manicoba">
-  <img src="assets/imagens/manicoba-banner.png" alt="Maniçoba da Forja do Sabor" class="imagem-banner">
-</section>
+.tradition-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
+.tradition-feature {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
+.tradition-feature:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.tradition-feature i {
+    font-size: 3.2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.tradition-feature h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.tradition-feature p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.manicoba-section {
+    padding: 60px 0;
+    background-color: var(--light-bg);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.category-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.category-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.manicoba-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.manicoba-item {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.manicoba-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.manicoba-item img {
+    width: 100%;
+    height: 200px; /* Altura padrão para as imagens de maniçoba */
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.manicoba-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.manicoba-content h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.manicoba-content p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.manicoba-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.btn-manicoba {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #25D366; /* WhatsApp Green */
+    color: var(--white);
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-manicoba:hover {
+    background-color: #1DA851;
+}
+
+.btn-manicoba i {
+    margin-right: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .tradition-content h2 {
+        font-size: 2rem;
+    }
+    .tradition-content p {
+        font-size: 1rem;
+    }
+    .tradition-feature i {
+        font-size: 2.8rem;
+    }
+    .tradition-feature h3 {
+        font-size: 1.3rem;
+    }
+    .category-header h2 {
+        font-size: 2rem;
+    }
+    .category-header p {
+        font-size: 1rem;
+    }
+    .manicoba-item img {
+        height: 160px;
+    }
+    .manicoba-content h3 {
+        font-size: 1.4rem;
+    }
+    .manicoba-price {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tradition-content h2 {
+        font-size: 1.8rem;
+    }
+    .tradition-features {
+        grid-template-columns: 1fr;
+    }
+    .category-header h2 {
+        font-size: 1.8rem;
+    }
+    .manicoba-grid {
+        grid-template-columns: 1fr;
+    }
+    .manicoba-item img {
+        height: 180px;
+    }
+    .manicoba-price {
+        font-size: 1.4rem;
+    }
+    .btn-manicoba {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
