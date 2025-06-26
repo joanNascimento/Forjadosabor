@@ -5,166 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monte sua Salada - Forja do Sabor</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/saladas.css"> <!-- Estilo específico para saladas -->
+    <link rel="stylesheet" href="css/saladas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="saladas-theme">
+<body>
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="index.html" class="logo">Forja do Sabor</a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="saladas.html">Monte sua Salada</a></li>
-                    <li><a href="gourmet.html">Tábuas & Combos Gourmet</a></li>
-                    <li><a href="manicoba.html">Maniçoba da Forja</a></li>
-                    <li><a href="quem-somos.html">Quem Somos</a></li>
-                    <li><a href="como-pedir.html">Como Pedir</a></li>
-                </ul>
-                <div class="menu-toggle">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="assets/imagens/logo-forja-do-sabor.jpg" alt="Forja do Sabor" class="logo-image">
+                <div class="logo">Forja do Sabor</div>
+            </div>
+            <nav>
+                <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-            </div>
-        </nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="saladas.html">Saladas</a></li>
+                    <li><a href="gourmet.html">Gourmet</a></li>
+                    <li><a href="manicoba.html">Maniçoba</a></li>
+                    <li><a href="caldos.html">Caldos</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="como-pedir.html">Como Pedir</a></li>
+                    <li><a href="drinks.html">Drinks (Em Breve)</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero-category">
-            <div class="container">
-                <h1>Monte sua Salada</h1>
-                <p>Crie sua combinação perfeita com ingredientes frescos e saudáveis.</p>
+        <section class="hero saladas-hero">
+            <div class="hero-content">
+                <h1>Monte sua Salada Perfeita</h1>
+                <p>Ingredientes frescos e selecionados para criar a salada dos seus sonhos</p>
+                <p class="disclaimer">Imagem meramente ilustrativa. Para saber mais sobre os produtos que estão saindo, siga o Instagram do @forja.do.sabor.</p>
             </div>
         </section>
 
-        <section class="salad-form-section">
+        <section class="form-section">
             <div class="container">
-                <h2>Sua Salada Personalizada</h2>
-                <div class="salad-form-container">
-                    <div class="form-group">
-                        <label>1. Escolha a Base (Obrigatório)</label>
-                        <div class="form-options">
-                            <div class="form-option">
-                                <input type="radio" id="base-americana" name="base" value="Alface Americana" required>
-                                <label for="base-americana">Alface Americana</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="radio" id="base-simples-roxa" name="base" value="Alface Simples e Roxa">
-                                <label for="base-simples-roxa">Alface Simples e Roxa</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="radio" id="base-mix" name="base" value="Mix de Folhas">
-                                <label for="base-mix">Mix de Folhas</label>
+                <h2 class="section-title">Monte sua Salada</h2>
+                
+                <form class="salada-form" id="saladaForm">
+                    <div class="salad-form-steps">
+                        <div class="step-indicator active" id="step1">1. Plano</div>
+                        <div class="step-indicator" id="step2">2. Base & Proteína</div>
+                        <div class="step-indicator" id="step3">3. Extras & Molho</div>
+                        <div class="step-indicator" id="step4">4. Seus Dados</div>
+                    </div>
+
+                    <div class="form-step active" id="formStep1">
+                        <div class="form-group">
+                            <label>Escolha seu Plano:</label>
+                            <div class="plan-options">
+                                <label class="plan-option">
+                                    <input type="radio" id="essencial" name="plano" value="essencial" data-price="45" data-extras="3" required>
+                                    <div class="plan-card">
+                                        <h3>Essencial</h3>
+                                        <div class="price">R$ 45,00</div>
+                                        <p>Até 3 extras</p>
+                                    </div>
+                                </label>
+                                <label class="plan-option">
+                                    <input type="radio" id="completo" name="plano" value="completo" data-price="55" data-extras="5" required>
+                                    <div class="plan-card">
+                                        <h3>Completo</h3>
+                                        <div class="price">R$ 55,00</div>
+                                        <p>Até 5 extras</p>
+                                    </div>
+                                </label>
+                                <label class="plan-option">
+                                    <input type="radio" id="premium" name="plano" value="premium" data-price="65" data-extras="999" required>
+                                    <div class="plan-card">
+                                        <h3>Premium</h3>
+                                        <div class="price">R$ 65,00</div>
+                                        <p>Proteína nobre inclusa, sem limite de extras</p>
+                                    </div>
+                                </label>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>2. Escolha a Proteína (Obrigatório)</label>
-                        <div class="form-options">
-                            <div class="form-option">
-                                <input type="radio" id="proteina-frango" name="proteina" value="Frango" required>
-                                <label for="proteina-frango">Frango</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="radio" id="proteina-peru" name="proteina" value="Peito de Peru">
-                                <label for="proteina-peru">Peito de Peru</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="radio" id="proteina-mignon" name="proteina" value="Mignon">
-                                <label for="proteina-mignon">Mignon</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="radio" id="proteina-peixe" name="proteina" value="Peixe">
-                                <label for="proteina-peixe">Peixe</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>3. Escolha até 5 Extras</label>
-                        <div class="form-options">
-                            <div class="form-option">
-                                <input type="checkbox" id="extra-repolho" name="extra" value="Repolho">
-                                <label for="extra-repolho">Repolho</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="checkbox" id="extra-pimentao" name="extra" value="Pimentão">
-                                <label for="extra-pimentao">Pimentão</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="checkbox" id="extra-cebola" name="extra" value="Cebola">
-                                <label for="extra-cebola">Cebola</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="checkbox" id="extra-croutons" name="extra" value="Croutons">
-                                <label for="extra-croutons">Croutons</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="checkbox" id="extra-azeitona" name="extra" value="Azeitona">
-                                <label for="extra-azeitona">Azeitona</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="checkbox" id="extra-pepino" name="extra" value="Pepino">
-                                <label for="extra-pepino">Pepino</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="checkbox" id="extra-tomate" name="extra" value="Tomate">
-                                <label for="extra-tomate">Tomate</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="checkbox" id="extra-queijo" name="extra" value="Queijo">
-                                <label for="extra-queijo">Queijo</label>
+                        <p class="separator">OU</p>
+                        <div class="form-group">
+                            <label>Ou escolha uma de nossas saladas prontas:</label>
+                            <div class="ready-salads">
+                                <div class="ready-salad-option">
+                                    <h4>Salada Mix Completa</h4>
+                                    <p>Mix de folhas, pepino, cenoura, cebola roxa, repolho, tomate cereja, kani, ovo de codorna e gergelim</p>
+                                    <div class="salad-sizes">
+                                        <label class="size-option">
+                                            <input type="radio" name="ready-salad" value="mix-completa-500ml" data-name="Salada Mix Completa (500ml)" data-price="15">
+                                            <span>500ml - R$ 15,00</span>
+                                        </label>
+                                        <label class="size-option">
+                                            <input type="radio" name="ready-salad" value="mix-completa-750ml" data-name="Salada Mix Completa (750ml)" data-price="20">
+                                            <span>750ml - R$ 20,00</span>
+                                        </label>
+                                        <label class="size-option">
+                                            <input type="radio" name="ready-salad" value="mix-completa-1000ml" data-name="Salada Mix Completa (1000ml)" data-price="25">
+                                            <span>1000ml - R$ 25,00</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="ready-salad-option">
+                                    <h4>Salada Mix com Camarão</h4>
+                                    <p>Mix de folhas, pepino, cenoura, cebola roxa, repolho, tomate cereja, kani, ovo de codorna, gergelim e camarão</p>
+                                    <div class="salad-sizes">
+                                        <label class="size-option">
+                                            <input type="radio" name="ready-salad" value="mix-camarao-500ml" data-name="Salada Mix com Camarão (500ml)" data-price="20">
+                                            <span>500ml - R$ 20,00</span>
+                                        </label>
+                                        <label class="size-option">
+                                            <input type="radio" name="ready-salad" value="mix-camarao-750ml" data-name="Salada Mix com Camarão (750ml)" data-price="25">
+                                            <span>750ml - R$ 25,00</span>
+                                        </label>
+                                        <label class="size-option">
+                                            <input type="radio" name="ready-salad" value="mix-camarao-1000ml" data-name="Salada Mix com Camarão (1000ml)" data-price="30">
+                                            <span>1000ml - R$ 30,00</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <button type="button" class="btn-next" data-step="1">Próximo</button>
                     </div>
 
-                    <div class="form-group price-plans">
-                        <label>4. Escolha seu Plano</label>
-                        <div class="form-options">
-                            <div class="form-option">
-                                <input type="radio" id="plano-essencial" name="plano" value="Essencial" data-price="45" required>
-                                <label for="plano-essencial">Essencial (até 3 extras) - R$ 45</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="radio" id="plano-completo" name="plano" value="Completo" data-price="55">
-                                <label for="plano-completo">Completo (até 5 extras) - R$ 55</label>
-                            </div>
-                            <div class="form-option">
-                                <input type="radio" id="plano-premium" name="plano" value="Premium" data-price="65">
-                                <label for="plano-premium">Premium (proteína nobre) - R$ 65</label>
-                            </div>
+                    <div class="form-step" id="formStep2">
+                        <div class="form-group">
+                            <label for="base">Base (obrigatório):</label>
+                            <select id="base" name="base">
+                                <option value="">Selecione a base</option>
+                                <option value="Mix de Folhas">Mix de Folhas</option>
+                                <option value="Alface Crespa">Alface Crespa</option>
+                                <option value="Rúcula">Rúcula</option>
+                                <option value="Agrião">Agrião</option>
+                            </select>
+                            <p class="error-message" id="base-error" style="display: none;">Por favor, selecione uma base.</p>
                         </div>
+
+                        <div class="form-group">
+                            <label for="proteina">Proteína (obrigatório):</label>
+                            <select id="proteina" name="proteina">
+                                <option value="">Selecione a proteína</option>
+                                <option value="Frango Grelhado">Frango Grelhado</option>
+                                <option value="Frango Desfiado">Frango Desfiado</option>
+                                <option value="Atum Sólido">Atum Sólido</option>
+                                <option value="Ovo de Codorna">Ovo de Codorna</option>
+                                <option value="Queijo Coalho">Queijo Coalho</option>
+                                <option value="Camarão Rosa Salteado (Premium)" data-premium="true">Camarão Rosa Salteado (Premium)</option>
+                                <option value="Salmão Grelhado (Premium)" data-premium="true">Salmão Grelhado (Premium)</option>
+                            </select>
+                            <div id="protein-warning" class="warning-message" style="display: none;">
+                                Esta proteína está disponível apenas no plano Premium.
+                            </div>
+                            <p class="error-message" id="proteina-error" style="display: none;">Por favor, selecione uma proteína.</p>
+                        </div>
+                        <button type="button" class="btn-prev" data-step="2">Anterior</button>
+                        <button type="button" class="btn-next" data-step="2">Próximo</button>
                     </div>
 
-                    <div class="price-display">
-                        Total: R$ <span id="total-price">0.00</span>
-                    </div>
-
-                    <div class="error-message" id="error-message"></div>
-
-                    <div class="order-button-container">
-                        <button type="button" id="whatsapp-order-btn" class="btn btn-primary">Finalizar pedido via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="whatsapp-button">
-        <a href="https://wa.me/5591985148050" target="_blank">
-            <img src="assets/icones/whatsapp-icon.png" alt="WhatsApp">
-        </a>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Forja do Sabor. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-    <script src="js/saladas.js"></script> <!-- Script específico para saladas -->
-</body>
-</html>
-
+                    <div class="form-step" id="formStep3">
+                        <div class="form-group">
+                            <label>Extras:</label>
+                            <div class="extras-grid">
+                                <div class="extra-option">
+                                    <input type="checkbox" id="pepino" name="extras" value="Pepino">
+                                    <label for="pepino">Pepino</label>
+                                </div>
+                                <div class="
