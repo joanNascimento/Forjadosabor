@@ -5,162 +5,259 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maniçoba da Forja - Forja do Sabor</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/manicoba.css"> <!-- Estilo específico para maniçoba -->
+    <link rel="stylesheet" href="css/manicoba.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<section class="banner-manicoba">
-  <img src="assets/imagens/manicoba-banner.png" alt="Maniçoba da Forja do Sabor" class="imagem-banner">
-</section>
-
-.banner-manicoba {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.banner-manicoba img.imagem-banner {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-<body class="manicoba-theme">
+<body>
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="index.html" class="logo">Forja do Sabor</a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="saladas.html">Monte sua Salada</a></li>
-                    <li><a href="gourmet.html">Tábuas & Combos Gourmet</a></li>
-                    <li><a href="manicoba.html">Maniçoba da Forja</a></li>
-                    <li><a href="quem-somos.html">Quem Somos</a></li>
-                    <li><a href="como-pedir.html">Como Pedir</a></li>
-                </ul>
-                <div class="menu-toggle">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="assets/imagens/logo-forja-do-sabor.jpg" alt="Forja do Sabor" class="logo-image">
+                <div class="logo">Forja do Sabor</div>
+            </div>
+            <nav>
+                <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-            </div>
-        </nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="saladas.html">Saladas</a></li>
+                    <li><a href="gourmet.html">Gourmet</a></li>
+                    <li><a href="manicoba.html">Maniçoba</a></li>
+                    <li><a href="caldos.html">Caldos</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="como-pedir.html">Como Pedir</a></li>
+                    <li><a href="drinks.html">Drinks (Em Breve)</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero-category">
-            <div class="container">
+        <section class="hero manicoba-hero">
+            <div class="hero-content">
                 <h1>Maniçoba da Forja</h1>
-                <p>O sabor autêntico da tradição paraense, pronto para você.</p>
+                <p>O sabor tradicional paraense preparado com todo carinho e autenticidade</p>
+                <p class="disclaimer">Imagem meramente ilustrativa. Para saber mais sobre os produtos que estão saindo, siga o Instagram do @forja.do.sabor.</p>
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="manicoba-tradition">
             <div class="container">
-                <div class="product-category">
-                    <h3>Potes Individuais</h3>
-                    <div class="product-list">
-                        <div class="product-item">
-                            <img src="assets/imagens/manicoba-250ml.jpg" alt="Maniçoba 250ml">
-                            <div class="product-item-content">
-                                <h4>Maniçoba 250ml</h4>
-                                <p>Porção individual para saborear a qualquer momento.</p>
-                                <span class="price">R$ 20</span>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <img src="assets/imagens/manicoba-500ml.jpg" alt="Maniçoba 500ml">
-                            <div class="product-item-content">
-                                <h4>Maniçoba 500ml</h4>
-                                <p>Ideal para compartilhar ou para quem ama maniçoba.</p>
-                                <span class="price">R$ 35</span>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <img src="assets/imagens/manicoba-1l.jpg" alt="Maniçoba 1L">
-                            <div class="product-item-content">
-                                <h4>Maniçoba 1L</h4>
-                                <p>Perfeita para a família ou para guardar um pouco mais.</p>
-                                <span class="price">R$ 65</span>
-                            </div>
-                        </div>
+                <div class="tradition-content">
+                    <h2>A Tradição Paraense</h2>
+                    <p>
+                        A maniçoba é um dos pratos mais tradicionais da culinária paraense, preparada com folhas de mandioca 
+                        cozidas por dias até atingir o ponto perfeito. Na Forja do Sabor, mantemos essa tradição viva, 
+                        preparando nossa maniçoba com todo o carinho e respeito que essa iguaria merece.
+                    </p>
+                    <p>
+                        Cada porção é uma viagem aos sabores autênticos do Pará, com ingredientes selecionados e 
+                        o tempo de preparo necessário para garantir a textura e sabor únicos que só a verdadeira maniçoba possui.
+                    </p>
+                </div>
+                <div class="tradition-features">
+                    <div class="tradition-feature">
+                        <i class="fas fa-clock"></i>
+                        <h3>Preparo Tradicional</h3>
+                        <p>Cozimento lento por dias para o sabor perfeito</p>
+                    </div>
+                    <div class="tradition-feature">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Ingredientes Selecionados</h3>
+                        <p>Folhas de mandioca e temperos especiais</p>
+                    </div>
+                    <div class="tradition-feature">
+                        <i class="fas fa-heart"></i>
+                        <h3>Feito com Amor</h3>
+                        <p>Cada porção preparada com carinho e dedicação</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="product-category">
-                    <h3>Combos</h3>
-                    <div class="product-list">
-                        <div class="product-item">
-                            <img src="assets/imagens/combo-forjinha.jpg" alt="Combo Forjinha">
-                            <div class="product-item-content">
-                                <h4>Forjinha</h4>
-                                <p>Maniçoba 250ml + Arroz + Farofa.</p>
-                                <span class="price">R$ 39,90</span>
-                            </div>
+        <section class="manicoba-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Potes Individuais</h2>
+                    <p>Escolha o tamanho ideal para satisfazer sua vontade de maniçoba autêntica</p>
+                </div>
+                <div class="manicoba-grid">
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Maniçoba 250g">
+                        <div class="manicoba-content">
+                            <h3>Pote 250g</h3>
+                            <p>Porção individual perfeita para uma refeição leve e saborosa, ideal para experimentar nosso sabor tradicional.</p>
+                            <div class="manicoba-price">R$ 20,00</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20um%20Pote%20de%20Maniçoba%20250g%20(R$%2020,00)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
                         </div>
-                        <div class="product-item">
-                            <img src="assets/imagens/combo-forja-dupla.jpg" alt="Combo Forja Dupla">
-                            <div class="product-item-content">
-                                <h4>Forja Dupla</h4>
-                                <p>2 Maniçobas 250ml + Arroz + Farofa.</p>
-                                <span class="price">R$ 74,90</span>
-                            </div>
+                    </div>
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Maniçoba 500g">
+                        <div class="manicoba-content">
+                            <h3>Pote 500g</h3>
+                            <p>Porção generosa para uma refeição completa e satisfatória, perfeita para quem quer se deliciar.</p>
+                            <div class="manicoba-price">R$ 35,00</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20um%20Pote%20de%20Maniçoba%20500g%20(R$%2035,00)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
                         </div>
-                        <div class="product-item">
-                            <img src="assets/imagens/combo-familia.jpg" alt="Combo Família">
-                            <div class="product-item-content">
-                                <h4>Família</h4>
-                                <p>Maniçoba 1L + Arroz + Farofa + Pimenta.</p>
-                                <span class="price">R$ 130</span>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <img src="assets/imagens/combo-degustacao.jpg" alt="Combo Degustação">
-                            <div class="product-item-content">
-                                <h4>Degustação</h4>
-                                <p>Pequenas porções de maniçoba e acompanhamentos.</p>
-                                <span class="price">R$ 55</span>
-                            </div>
+                    </div>
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Maniçoba 1kg">
+                        <div class="manicoba-content">
+                            <h3>Pote 1kg</h3>
+                            <p>Porção família ideal para compartilhar com quem você ama, levando a tradição paraense para sua mesa.</p>
+                            <div class="manicoba-price">R$ 65,00</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20um%20Pote%20de%20Maniçoba%201kg%20(R$%2065,00)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
                         </div>
                     </div>
                 </div>
+                <p class="disclaimer">Imagem meramente ilustrativa. Para saber mais sobre os produtos que estão saindo, siga o Instagram do @forja.do.sabor.</p>
+            </div>
+        </section>
 
-                <div class="product-category">
-                    <h3>Sucos Extras</h3>
-                    <div class="product-list">
-                        <div class="product-item">
-                            <img src="assets/imagens/suco-cupuacu.jpg" alt="Suco de Cupuaçu">
-                            <div class="product-item-content">
-                                <h4>Suco de Cupuaçu</h4>
-                                <p>Refrescante e tropical.</p>
-                                <span class="price">R$ 10</span>
-                            </div>
+        <section class="manicoba-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Combos Especiais</h2>
+                    <p>Combinações especiais para diferentes momentos e ocasiões</p>
+                </div>
+                <div class="manicoba-grid">
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Combo Forjinha">
+                        <div class="manicoba-content">
+                            <h3>Combo Forjinha</h3>
+                            <p>Combo individual com maniçoba e acompanhamentos especiais, perfeito para uma refeição completa e saborosa.</p>
+                            <div class="manicoba-price">R$ 39,90</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20o%20Combo%20Forjinha%20(R$%2039,90)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
                         </div>
-                        <div class="product-item">
-                            <img src="assets/imagens/suco-bacuri.jpg" alt="Suco de Bacuri">
-                            <div class="product-item-content">
-                                <h4>Suco de Bacuri</h4>
-                                <p>Sabor exótico da Amazônia.</p>
-                                <span class="price">R$ 12</span>
-                            </div>
+                    </div>
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Combo Forja Dupla">
+                        <div class="manicoba-content">
+                            <h3>Combo Forja Dupla</h3>
+                            <p>Combo para duas pessoas com porções generosas de maniçoba e acompanhamentos, ideal para compartilhar.</p>
+                            <div class="manicoba-price">R$ 74,90</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20o%20Combo%20Forja%20Dupla%20(R$%2074,90)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
+                        </div>
+                    </div>
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Combo Família">
+                        <div class="manicoba-content">
+                            <h3>Combo Família</h3>
+                            <p>Combo familiar com porções abundantes para toda a família desfrutar da tradição paraense juntos.</p>
+                            <div class="manicoba-price">R$ 130,00</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20o%20Combo%20Família%20(R$%20130,00)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
+                        </div>
+                    </div>
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Combo Degustação">
+                        <div class="manicoba-content">
+                            <h3>Combo Degustação</h3>
+                            <p>Combo especial para quem quer experimentar diferentes sabores e acompanhamentos da nossa maniçoba.</p>
+                            <div class="manicoba-price">R$ 55,00</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20o%20Combo%20Degustação%20(R$%2055,00)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
                         </div>
                     </div>
                 </div>
+                <p class="disclaimer">Imagem meramente ilustrativa. Para saber mais sobre os produtos que estão saindo, siga o Instagram do @forja.do.sabor.</p>
+            </div>
+        </section>
+
+        <section class="manicoba-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Sucos Extras</h2>
+                    <p>Sucos naturais para acompanhar sua maniçoba com sabores típicos da região</p>
+                </div>
+                <div class="manicoba-grid">
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Suco de Cupuaçu">
+                        <div class="manicoba-content">
+                            <h3>Suco de Cupuaçu</h3>
+                            <p>Suco natural de cupuaçu, fruta típica da Amazônia, com sabor único e refrescante para acompanhar sua refeição.</p>
+                            <div class="manicoba-price">R$ 10,00</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20um%20Suco%20de%20Cupuaçu%20(R$%2010,00)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
+                        </div>
+                    </div>
+                    <div class="manicoba-item">
+                        <img src="assets/imagens/MANICOBA-ICONE.jpg" alt="Suco de Bacuri">
+                        <div class="manicoba-content">
+                            <h3>Suco de Bacuri</h3>
+                            <p>Suco natural de bacuri, fruta exótica da região amazônica, com sabor doce e aromático incomparável.</p>
+                            <div class="manicoba-price">R$ 12,00</div>
+                            <a href="https://wa.me/5591985148050?text=Olá,%20Forja%20do%20Sabor!%20Gostaria%20de%20pedir%20um%20Suco%20de%20Bacuri%20(R$%2012,00)." class="btn-manicoba" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Pedir Agora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p class="disclaimer">Imagem meramente ilustrativa. Para saber mais sobre os produtos que estão saindo, siga o Instagram do @forja.do.sabor.</p>
             </div>
         </section>
     </main>
 
-    <div class="whatsapp-button">
-        <a href="https://wa.me/5591985148050" target="_blank">
-            <img src="assets/icones/whatsapp-icon.png" alt="WhatsApp">
-        </a>
-    </div>
-
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Forja do Sabor. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fab fa-whatsapp"></i> (91) 98514-8050</p>
+                    <p><i class="fab fa-instagram"></i> @forja.do.sabor</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Segunda a Domingo: 17h às 23h</p>
+                    <p><small>*Horários podem variar em feriados</small></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Entrega</h3>
+                    <p>Taxa de entrega: A partir de R$ 5,00</p>
+                    <p>Tábuas grandes: Prazo de 24h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Forja do Sabor. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
+    <div class="float-buttons">
+        <a href="https://www.instagram.com/forja.do.sabor?igsh=MXFpMnN5ODhmOG0zbA==" class="instagram-float" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/5591985148050" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
     <script src="js/script.js"></script>
+    <script src="js/manicoba.js"></script>
 </body>
 </html>
-
-
