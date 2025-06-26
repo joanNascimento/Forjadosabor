@@ -1,50 +1,264 @@
-
-/* saladas.css */
-
-.saladas-theme .hero-category {
-    background-color: var(--color-green-light);
-    color: var(--color-text-light);
+/* Saladas - Específico */
+.saladas-hero {
+    background-image: url('../assets/imagens/SALADA-CAPA.jpg');
 }
 
-.saladas-theme .salad-form-section h2 {
-    color: var(--color-green-dark);
+.form-section {
+    padding: 60px 0;
+    background-color: var(--light-bg);
 }
 
-.saladas-theme .form-group label {
-    color: var(--color-green-dark);
+.form-section .container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    gap: 30px;
+    align-items: flex-start;
 }
 
-.saladas-theme .form-option label:hover {
-    border-color: var(--color-orange);
-    background-color: #fff5e6;
+.salada-form {
+    flex: 2; /* Ocupa mais espaço */
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.saladas-theme .form-option input[type="radio"]:checked + label,
-.saladas-theme .form-option input[type="checkbox"]:checked + label {
-    border-color: var(--color-green-dark);
-    background-color: var(--color-green-light);
-    color: var(--color-text-light);
+.salad-form-steps {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.saladas-theme .form-option input[type="radio"]:checked + label:hover,
-.saladas-theme .form-option input[type="checkbox"]:checked + label:hover {
-    background-color: var(--color-green-dark);
+.step-indicator {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: var(--gray);
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex: 1;
+    text-align: center;
+    min-width: 120px;
 }
 
-.saladas-theme .price-plans label {
-    color: var(--color-green-dark);
+.step-indicator.active {
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
-.saladas-theme .price-display {
-    color: var(--color-orange);
+.step-indicator.completed {
+    background-color: #25D366; /* WhatsApp Green */
+    color: var(--white);
 }
 
-.saladas-theme .order-button-container .btn-primary {
-    background-color: var(--color-orange);
+.form-step {
+    display: none; /* Esconde todos os passos por padrão */
+    width: 100%; /* Garante que o passo ocupe a largura total do formulário */
 }
 
-.saladas-theme .order-button-container .btn-primary:hover {
-    background-color: #e68900;
+.form-step.active {
+    display: block; /* Mostra apenas o passo ativo */
+}
+
+.form-group {
+    margin-bottom: 25px;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--primary-color);
+}
+
+.form-group select,
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.plan-options,
+.salad-sizes,
+.molho-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.plan-option,
+.size-option,
+.molho-option {
+    cursor: pointer;
+    position: relative;
+}
+
+.plan-card,
+.molho-card {
+    border: 2px solid var(--gray);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+    height: 100%; /* Garante altura uniforme */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.plan-card .price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.plan-option input[type="radio"],
+.size-option input[type="radio"],
+.molho-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.plan-option input[type="radio"]:checked + .plan-card,
+.size-option input[type="radio"]:checked + span,
+.molho-option input[type="radio"]:checked + .molho-card {
+    border-color: var(--primary-color);
+    background-color: #fff9e6; /* Um amarelo bem clarinho */
+    box-shadow: 0 0 10px rgba(160, 82, 45, 0.2);
+}
+
+.size-option span {
+    display: block;
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+}
+
+.ready-salads {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ready-salad-option {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+.ready-salad-option h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.ready-salad-option p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.ready-salad-option .salad-sizes {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.extra-option {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.extra-option input[type="checkbox"] {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.extra-option input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.extra-option input[type="checkbox"]:checked::after {
+    content: '\2713'; /* Checkmark */
+    font-size: 14px;
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.extra-option label {
+    flex-grow: 1;
+    margin-bottom: 0; /* Override default label margin */
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.molho-info {
+    background-color: #e6ffe6; /* Light green background */
+    border-left: 5px solid #25D366; /* Green border */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.molho-info p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #333;
+}
+
+.mol
