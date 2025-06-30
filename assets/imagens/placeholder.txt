@@ -1,4 +1,0 @@
-# Criação de Imagens Temporárias para o Site
-
-Vou criar algumas imagens temporárias para o site usando placeholders coloridos que representem cada categoria.
-
