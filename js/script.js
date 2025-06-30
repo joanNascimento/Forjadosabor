@@ -1,66 +1,126 @@
-// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const productCards = document.querySelectorAll('.product-card');
+    const cartItemsList = document.getElementById('cart-items');
+    const cartTotalSpan = document.getElementById('cart-total');
+    const checkoutWhatsappBtn = document.getElementById('checkout-whatsapp-btn');
+    const cartEmptyMessage = document.querySelector('.cart-empty-message');
+    const mobileCartToggleBtn = document.getElementById('mobile-cart-toggle');
+    const cartSidebar = document.querySelector('.cart-sidebar');
+    const cartItemCountSpan = document.getElementById('cart-item-count');
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Lógica para o menu responsivo
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+    let cart = JSON.parse(localStorage.getItem('forjaCart')) || [];
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", function() {
-            navLinks.classList.toggle("active");
-        });
+    // Função para atualizar o carrinho na interface
+    function updateCartUI() {
+        cartItemsList.innerHTML = ''; // Limpa os itens atuais
+        let total = 0;
+
+        if (cart.length === 0) {
+            cartEmptyMessage.style.display = 'block';
+            checkoutWhatsappBtn.disabled = true;
+        } else {
+            cartEmptyMessage.style.display = 'none';
+            checkoutWhatsappBtn.disabled = false;
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <div class="item-details">
+                        <span class="item-name">🥗 ${item.name} (${item.size})</span>
+                        <span class="item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</span>
+                    </div>
+                    <button class="remove-item-btn" data-index="${index}"><i class="fas fa-times-circle"></i></button>
+                `;
+                cartItemsList.appendChild(li);
+                total += item.price;
+            });
+        }
+
+        cartTotalSpan.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        cartItemCountSpan.textContent = cart.length;
+        localStorage.setItem('forjaCart', JSON.stringify(cart)); // Salva no localStorage
     }
 
-    // Lógica para o carrossel de banners (apenas na página inicial)
-    const bannerCarousel = document.querySelector(".banner-carousel");
-    const carouselNavButtons = document.querySelectorAll(".carousel-nav button");
-    const prevButton = document.querySelector(".carousel-nav .prev");
-    const nextButton = document.querySelector(".carousel-nav .next");
+    // Adicionar item ao carrinho
+    productCards.forEach(card => {
+        const addButton = card.querySelector('.add-to-cart-btn');
+        addButton.addEventListener('click', () => {
+            const productId = card.dataset.id;
+            const productName = card.dataset.name;
+            
+            const selectedRadio = card.querySelector(`input[name="${productId}-size"]:checked`);
+            if (!selectedRadio) {
+                alert('Por favor, selecione um tamanho para a salada.');
+                return;
+            }
 
-    if (bannerCarousel) {
-        let currentIndex = 0;
-        const totalBanners = bannerCarousel.children.length;
+            const size = selectedRadio.value;
+            const price = parseFloat(selectedRadio.dataset.price);
 
-        function updateCarousel() {
-            bannerCarousel.style.transform = `translateX(${-currentIndex * 100 / totalBanners}%)`;
-            carouselNavButtons.forEach((button, index) => {
-                if (index === currentIndex) {
-                    button.classList.add("active");
-                } else {
-                    button.classList.remove("active");
-                }
-            });
+            const newItem = {
+                id: productId,
+                name: productName,
+                size: size,
+                price: price
+            };
+
+            cart.push(newItem);
+            updateCartUI();
+            
+            // Abre o carrinho na mobile após adicionar um item
+            if (window.innerWidth <= 768) {
+                cartSidebar.classList.add('open');
+            }
+        });
+    });
+
+    // Remover item do carrinho
+    cartItemsList.addEventListener('click', (event) => {
+        if (event.target.closest('.remove-item-btn')) {
+            const button = event.target.closest('.remove-item-btn');
+            const index = parseInt(button.dataset.index);
+            
+            // Remove o item do array 'cart'
+            cart.splice(index, 1);
+            updateCartUI();
         }
+    });
 
-        carouselNavButtons.forEach((button, index) => {
-            button.addEventListener("click", () => {
-                currentIndex = index;
-                updateCarousel();
-            });
+    // Gerar mensagem para WhatsApp
+    checkoutWhatsappBtn.addEventListener('click', () => {
+        let whatsappMessage = "Olá, Forja do Sabor! Gostaria de fazer o seguinte pedido:\n\n";
+        let total = 0;
+
+        cart.forEach(item => {
+            whatsappMessage += `🥗 ${item.name} (${item.size}) – R$ ${item.price.toFixed(2).replace('.', ',')}\n`;
+            total += item.price;
         });
 
-        if (prevButton) {
-            prevButton.addEventListener("click", () => {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalBanners - 1;
-                updateCarousel();
-            });
-        }
+        whatsappMessage += `\n💰 Total: R$ ${total.toFixed(2).replace('.', ',')}`;
+        whatsappMessage += `\n\n📍 Meu nome é: [Seu Nome]`;
+        whatsappMessage += `\n🏠 Endereço para entrega: [Seu Endereço, Número, Bairro, Ponto de Referência]`;
+        whatsappMessage += `\n📱 Telefone para contato: [Seu Telefone]`;
+        whatsappMessage += `\n\n(Por favor, preencha seus dados acima para prosseguir com o pedido.)`;
 
-        if (nextButton) {
-            nextButton.addEventListener("click", () => {
-                currentIndex = (currentIndex < totalBanners - 1) ? currentIndex + 1 : 0;
-                updateCarousel();
-            });
-        }
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappUrl = `https://wa.me/5591985148050?text=${encodedMessage}`; // Seu número do WhatsApp
 
-        // Auto-play do carrossel
-        setInterval(() => {
-            currentIndex = (currentIndex < totalBanners - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
-        }, 5000); // Muda a cada 5 segundos
+        window.open(whatsappUrl, '_blank');
+    });
 
-        updateCarousel(); // Inicializa o carrossel
-    }
+    // Toggle do carrinho para mobile
+    mobileCartToggleBtn.addEventListener('click', () => {
+        cartSidebar.classList.toggle('open');
+    });
+
+    // Fechar carrinho ao clicar fora dele no mobile (opcional, mas bom para UX)
+    // document.addEventListener('click', (event) => {
+    //     if (window.innerWidth <= 768 && cartSidebar.classList.contains('open') && 
+    //         !cartSidebar.contains(event.target) && !mobileCartToggleBtn.contains(event.target) &&
+    //         !event.target.closest('.add-to-cart-btn')) {
+    //         cartSidebar.classList.remove('open');
+    //     }
+    // });
+
+    // Inicializa a UI do carrinho ao carregar a página
+    updateCartUI();
 });
-
-
