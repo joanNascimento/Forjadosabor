@@ -1,27 +1,139 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Forja do Sabor</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forja do Sabor - Pedido Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header class="menu">
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="saladas.html">Saladas</a></li>
-        <li><a href="caldos.html">Caldos</a></li>
-        <li><a href="combos.html">Combos</a></li>
-        <li><a href="drinks/index.html" class="drinks-link">🍸 Drinks</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Bem-vindo à Forja do Sabor</h1>
-    <p>Conteúdo da página principal ou seção específica.</p>
-  </main>
+    <header class="main-header">
+        <div class="header-content">
+            <img src="https://via.placeholder.com/150x80?text=Logo+Forja" alt="Logo Forja do Sabor" class="logo">
+            <h1>Forja do Sabor</h1>
+            <p>Frescor, sabor e saúde em cada pote!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="products-section">
+            <h2>Nossas Saladas Gourmet</h2>
+            <div class="product-grid">
+
+                <div class="product-card" data-id="forja-para" data-name="Forja do Pará (Frango)">
+                    <img src="https://via.placeholder.com/300x200?text=Forja+do+Para" alt="Salada Forja do Pará (Frango)" class="product-image">
+                    <div class="product-info">
+                        <h3>FORJA DO PARÁ <span class="tag">(FRANGO)</span> <i class="fas fa-leaf healthy-icon"></i></h3>
+                        <p>Mix de folhas, pepino, cenoura, cebola roxa, repolho roxo, tomate cereja, kani, ovo de codorna + frango grelhado ou desfiado, manga.</p>
+                        <div class="sizes">
+                            <label><input type="radio" name="forja-para-size" value="500ml" data-price="15.00" checked> 500ml - R$15,00</label>
+                            <label><input type="radio" name="forja-para-size" value="750ml" data-price="20.00"> 750ml - R$20,00</label>
+                            <label><input type="radio" name="forja-para-size" value="1000ml" data-price="25.00"> 1000ml - R$25,00</label>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fas fa-plus-circle"></i> Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-id="forja-mar" data-name="Forja do Mar (Camarão)">
+                    <img src="https://via.placeholder.com/300x200?text=Forja+do+Mar" alt="Salada Forja do Mar (Camarão)" class="product-image">
+                    <div class="product-info">
+                        <h3>FORJA DO MAR <span class="tag">(CAMARÃO)</span> <i class="fas fa-leaf healthy-icon"></i></h3>
+                        <p>Mix de folhas, pepino, cenoura, cebola roxa, repolho roxo, tomate cereja, kani, ovo de codorna + camarão rosa salteado no azeite.</p>
+                        <div class="sizes">
+                            <label><input type="radio" name="forja-mar-size" value="500ml" data-price="20.00" checked> 500ml - R$20,00</label>
+                            <label><input type="radio" name="forja-mar-size" value="750ml" data-price="25.00"> 750ml - R$25,00</label>
+                            <label><input type="radio" name="forja-mar-size" value="1000ml" data-price="30.00"> 1000ml - R$30,00</label>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fas fa-plus-circle"></i> Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-id="forja-atum" data-name="Forja Sabor Atum">
+                    <img src="https://via.placeholder.com/300x200?text=Forja+Atum" alt="Salada Forja Sabor Atum" class="product-image">
+                    <div class="product-info">
+                        <h3>FORJA SABOR ATUM <i class="fas fa-leaf healthy-icon"></i> <span class="tag-highlight">⭐ Mais Vendida!</span></h3>
+                        <p>Deliciosa salada gourmet com atum selecionado, frescor e tempero na medida certa!</p>
+                        <p class="ingredients-suggested">Ingredientes sugeridos: Alface crespa, Pepino japonês, Tomate cereja, Cenoura ralada, Milho verde, Ovo cozido, Atum premium, Azeitonas, Mix de sementes.</p>
+                        <div class="sizes">
+                            <label><input type="radio" name="forja-atum-size" value="500ml" data-price="20.00" checked> 500ml - R$20,00</label>
+                            <label><input type="radio" name="forja-atum-size" value="750ml" data-price="25.00"> 750ml - R$25,00</label>
+                            <label><input type="radio" name="forja-atum-size" value="1000ml" data-price="30.00"> 1000ml - R$30,00</label>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fas fa-plus-circle"></i> Adicionar</button>
+                    </div>
+                </div>
+
+            </div> <h2 class="section-title">Combos com Suco 300ml</h2>
+            <div class="product-grid">
+
+                <div class="product-card" data-id="combo-sertao" data-name="Combo Forja do Sertão (Frango + Suco)">
+                    <img src="https://via.placeholder.com/300x200?text=Combo+Frango+Suco" alt="Combo Forja do Sertão (Frango + Suco)" class="product-image">
+                    <div class="product-info">
+                        <h3>COMBO FORJA DO SERTÃO <span class="tag">(FRANGO + SUCO)</span> <i class="fas fa-leaf healthy-icon"></i></h3>
+                        <p>Salada Forja do Pará com suco natural 300ml para uma refeição completa!</p>
+                        <div class="sizes">
+                            <label><input type="radio" name="combo-sertao-size" value="500ml" data-price="20.00" checked> 500ml - R$20,00</label>
+                            <label><input type="radio" name="combo-sertao-size" value="750ml" data-price="25.00"> 750ml - R$25,00</label>
+                            <label><input type="radio" name="combo-sertao-size" value="1000ml" data-price="30.00"> 1000ml - R$30,00</label>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fas fa-plus-circle"></i> Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-id="combo-mar" data-name="Combo Forja do Mar (Camarão + Suco)">
+                    <img src="https://via.placeholder.com/300x200?text=Combo+Camarao+Suco" alt="Combo Forja do Mar (Camarão + Suco)" class="product-image">
+                    <div class="product-info">
+                        <h3>COMBO FORJA DO MAR <span class="tag">(CAMARÃO + SUCO)</span> <i class="fas fa-leaf healthy-icon"></i></h3>
+                        <p>Salada Forja do Mar com suco natural 300ml para uma experiência ainda mais completa!</p>
+                        <div class="sizes">
+                            <label><input type="radio" name="combo-mar-size" value="500ml" data-price="25.00" checked> 500ml - R$25,00</label>
+                            <label><input type="radio" name="combo-mar-size" value="750ml" data-price="30.00"> 750ml - R$30,00</label>
+                            <label><input type="radio" name="combo-mar-size" value="1000ml" data-price="35.00"> 1000ml - R$35,00</label>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fas fa-plus-circle"></i> Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-id="combo-atum" data-name="Combo Forja Sabor Atum + Suco">
+                    <img src="https://via.placeholder.com/300x200?text=Combo+Atum+Suco" alt="Combo Forja Sabor Atum + Suco" class="product-image">
+                    <div class="product-info">
+                        <h3>COMBO FORJA SABOR ATUM <span class="tag">(ATUM + SUCO)</span> <i class="fas fa-leaf healthy-icon"></i></h3>
+                        <p>A deliciosa salada Forja Sabor Atum com suco natural 300ml para um combo imbatível!</p>
+                        <p class="ingredients-suggested">Ingredientes sugeridos: Alface crespa, Pepino japonês, Tomate cereja, Cenoura ralada, Milho verde, Ovo cozido, Atum premium, Azeitonas, Mix de sementes.</p>
+                        <div class="sizes">
+                            <label><input type="radio" name="combo-atum-size" value="500ml" data-price="25.00" checked> 500ml - R$25,00</label>
+                            <label><input type="radio" name="combo-atum-size" value="750ml" data-price="30.00"> 750ml - R$30,00</label>
+                            <label><input type="radio" name="combo-atum-size" value="1000ml" data-price="35.00"> 1000ml - R$35,00</label>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fas fa-plus-circle"></i> Adicionar</button>
+                    </div>
+                </div>
+
+            </div> </section>
+
+        <section class="tip-section">
+            <p>✨ <strong>Dica da Forja:</strong> Despeje o molho, feche o pote e chacoalhe bem antes de consumir para sentir todo o sabor da combinação!</p>
+            <p>📲 Encomendas via (91)98514-8050 ou Instagram: <a href="https://www.instagram.com/forja.do.sabor/" target="_blank">@forja.do.sabor</a></p>
+        </section>
+    </main>
+
+    <div class="cart-sidebar">
+        <h3>Seu Pedido <i class="fas fa-shopping-cart"></i></h3>
+        <ul id="cart-items">
+            <li class="cart-empty-message">Seu carrinho está vazio. Adicione itens!</li>
+        </ul>
+        <div class="cart-summary">
+            <p>Total: <span id="cart-total">R$ 0,00</span></p>
+            <button id="checkout-whatsapp-btn" class="checkout-btn" disabled><i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="cart-toggle-btn" id="mobile-cart-toggle">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-item-count">0</span>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
