@@ -2,8 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600&display=swap');
 
 :root {
-    --primary-color: #4CAF50; /* Verde vibrante */
-    --secondary-color: #FFC107; /* Amarelo para destaque */
+    --primary-color: #2D5016; /* Verde escuro para Forja do Sabor - do seu CSS */
+    --secondary-color: #FFC107; /* Amarelo para destaque - mantido */
+    --saladas-green-light: #f0f8f0; /* Seu verde claro */
+    --saladas-green-dark: #2D5016; /* Seu verde escuro */
+    
     --text-color: #333;
     --light-text-color: #666;
     --background-color: #F9F9F9;
@@ -57,6 +60,7 @@ a:hover {
     margin-bottom: 10px;
     border-radius: 50%; /* Se quiser um logo redondo */
     border: 3px solid var(--secondary-color);
+    object-fit: cover; /* Para garantir que a imagem preencha o círculo */
 }
 
 .main-header h1 {
@@ -110,11 +114,13 @@ a:hover {
     display: flex;
     flex-direction: column;
     position: relative;
+    border: 2px solid var(--saladas-green-light); /* Do seu CSS */
 }
 
 .product-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 25px var(--shadow-medium);
+    border-color: var(--saladas-green-dark); /* Do seu CSS */
 }
 
 .product-image {
@@ -205,6 +211,16 @@ a:hover {
     cursor: pointer;
     display: flex;
     align-items: center;
+    gap: 0.5rem; /* Do seu size-option */
+    padding: 0.5rem; /* Do seu size-option */
+    border: 1px solid #ddd; /* Do seu size-option */
+    border-radius: 5px; /* Do seu size-option */
+    transition: all 0.3s ease; /* Do seu size-option */
+}
+
+.sizes label:hover { /* Adaptação do seu .size-option:hover */
+    background-color: #f0f8f0;
+    border-color: var(--saladas-green-light);
 }
 
 .sizes input[type="radio"] {
@@ -212,6 +228,15 @@ a:hover {
     transform: scale(1.2); /* Aumenta o tamanho do radio button */
     accent-color: var(--primary-color); /* Altera a cor do radio button */
 }
+
+.sizes input[type="radio"]:checked + span { /* Adaptação do seu .size-option input[type="radio"]:checked + span */
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
 
 .add-to-cart-btn {
     background-color: var(--primary-color);
@@ -232,7 +257,7 @@ a:hover {
 }
 
 .add-to-cart-btn:hover {
-    background-color: #4CAF50; /* Tom um pouco mais escuro ao passar o mouse */
+    background-color: var(--saladas-green-dark); /* Tom um pouco mais escuro ao passar o mouse */
     transform: translateY(-2px);
 }
 
@@ -250,6 +275,8 @@ a:hover {
     text-align: center;
     font-size: 1.1em;
     color: var(--light-text-color);
+    background: linear-gradient(135deg, #f0f8f0, #e8f5e8); /* Do seu molho-info */
+    border: 2px solid var(--saladas-green-light); /* Do seu molho-info */
 }
 
 .tip-section strong {
@@ -421,7 +448,7 @@ a:hover {
 }
 
 .cart-toggle-btn:hover {
-    background-color: #3e8e41;
+    background-color: var(--saladas-green-dark);
     transform: scale(1.05);
 }
 
@@ -531,3 +558,6 @@ a:hover {
         padding: 20px;
     }
 }
+
+/* Remover estilos de "Monte sua salada" que não serão mais usados */
+/* Removidos: .saladas-hero, .ready-salads, .ready-salad-option, .salad-sizes, .molho-info, .salada-form, .form-group, .plan-selector, .plan-option, .plan-card, .extras-grid, .extra-option, .molho-options, .molho-option, .molho-card, .resumo-pedido, .resumo-item, .btn-whatsapp, .inspiracao-section, .inspiracao-grid, .inspiracao-item, .warning-message, .protein-disabled, .quantidade-group, .quantidade-controls, .qty-btn, #quantidade */
