@@ -21,3 +21,35 @@ body {
   color: #ffcc66;
   font-weight: bold;
 }
+/* Estilos para os controles de quantidade no carrinho */
+.item-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 10px; /* Espaçamento entre os detalhes do item e os botões */
+}
+
+.qty-btn-cart {
+    background: #f0f0f0;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.qty-btn-cart:hover {
+    background: #e0e0e0;
+    border-color: var(--primary-color);
+}
+.item-quantity {
+    font-weight: 600;
+    min-width: 20px; /* Para manter o alinhamento */
+    text-align: center;
+}
