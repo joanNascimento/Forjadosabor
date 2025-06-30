@@ -1,83 +1,144 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Menu Hamburguer
-    const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('nav-list');
+    const productCards = document.querySelectorAll('.product-card');
+    const cartItemsList = document.getElementById('cart-items');
+    const cartTotalSpan = document.getElementById('cart-total');
+    const checkoutWhatsappBtn = document.getElementById('checkout-whatsapp-btn');
+    const cartEmptyMessage = document.querySelector('.cart-empty-message');
+    const mobileCartToggleBtn = document.getElementById('mobile-cart-toggle');
+    const cartSidebar = document.querySelector('.cart-sidebar');
+    const cartItemCountSpan = document.getElementById('cart-item-count');
 
-    if (hamburger && navList) {
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('active');
-            hamburger.classList.toggle('active'); // Adiciona classe para animar o ícone
-        });
+    let cart = JSON.parse(localStorage.getItem('forjaCart')) || [];
 
-        // Fechar o menu ao clicar em um item (mobile)
-        navList.querySelectorAll('a').forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth <= 768) { // Apenas em telas menores
-                    navList.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
+    // Função para atualizar o carrinho na interface
+    function updateCartUI() {
+        cartItemsList.innerHTML = ''; // Limpa os itens atuais
+        let total = 0;
+
+        if (cart.length === 0) {
+            cartEmptyMessage.style.display = 'block';
+            checkoutWhatsappBtn.disabled = true;
+        } else {
+            cartEmptyMessage.style.display = 'none';
+            checkoutWhatsappBtn.disabled = false;
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                // Adiciona a quantidade e botões de controle de quantidade
+                li.innerHTML = `
+                    <div class="item-details">
+                        <span class="item-name">🥗 ${item.name} (${item.size})</span>
+                        <span class="item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</span>
+                    </div>
+                    <div class="item-quantity-controls">
+                        <button class="qty-btn-cart" data-index="${index}" data-action="decrease">-</button>
+                        <span class="item-quantity">${item.quantity}</span>
+                        <button class="qty-btn-cart" data-index="${index}" data-action="increase">+</button>
+                    </div>
+                    <button class="remove-item-btn" data-index="${index}"><i class="fas fa-times-circle"></i></button>
+                `;
+                cartItemsList.appendChild(li);
+                total += item.price * item.quantity; // Multiplica pelo total de itens
             });
-        });
+        }
+
+        cartTotalSpan.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        cartItemCountSpan.textContent = cart.length; // Conta itens únicos, não a quantidade total
+        localStorage.setItem('forjaCart', JSON.stringify(cart)); // Salva no localStorage
     }
 
-    // Carrossel (somente na página inicial)
-    const carousel = document.getElementById('carousel');
-    if (carousel) {
-        const slides = document.querySelectorAll('.carousel-slide');
-        const prevButton = document.getElementById('carousel-prev');
-        const nextButton = document.getElementById('carousel-next');
-        let currentIndex = 0;
+    // Adicionar item ao carrinho
+    productCards.forEach(card => {
+        const addButton = card.querySelector('.add-to-cart-btn');
+        addButton.addEventListener('click', () => {
+            const productId = card.dataset.id;
+            const productName = card.dataset.name;
+            
+            const selectedRadio = card.querySelector(`input[name="${productId}-size"]:checked`);
+            if (!selectedRadio) {
+                alert('Por favor, selecione um tamanho para a salada.');
+                return;
+            }
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
+            const size = selectedRadio.value;
+            const price = parseFloat(selectedRadio.dataset.price);
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        }
+            // Verifica se o item já existe no carrinho com o mesmo ID e tamanho
+            const existingItem = cart.find(item => item.id === productId && item.size === size);
 
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-        }
+            if (existingItem) {
+                existingItem.quantity += 1; // Aumenta a quantidade
+            } else {
+                const newItem = {
+                    id: productId,
+                    name: productName,
+                    size: size,
+                    price: price,
+                    quantity: 1 // Inicia com 1
+                };
+                cart.push(newItem);
+            }
 
-        if (prevButton && nextButton) {
-            prevButton.addEventListener('click', prevSlide);
-            nextButton.addEventListener('click', nextSlide);
-        }
-
-        // Auto-play do carrossel
-        let autoPlayInterval = setInterval(nextSlide, 5000); // Muda a cada 5 segundos
-
-        // Pausar auto-play no hover
-        carousel.addEventListener('mouseenter', () => {
-            clearInterval(autoPlayInterval);
+            updateCartUI();
+            
+            // Abre o carrinho na mobile após adicionar um item
+            if (window.innerWidth <= 768) {
+                cartSidebar.classList.add('open');
+            }
         });
-
-        carousel.addEventListener('mouseleave', () => {
-            autoPlayInterval = setInterval(nextSlide, 5000);
-        });
-
-        showSlide(currentIndex); // Mostra o slide inicial
-    }
-
-    // Marca o link ativo na navegação
-    const currentPath = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('.nav-list a');
-
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        if (linkPath === currentPath) {
-            link.classList.add('active');
-        } else if (currentPath === '' && linkPath === 'index.html') {
-            // Caso especial para a página inicial acessada sem "index.html" no path
-            link.classList.add('active');
-        }
     });
+
+    // Remover ou ajustar quantidade do item do carrinho
+    cartItemsList.addEventListener('click', (event) => {
+        const target = event.target.closest('button');
+
+        if (!target) return; // Se não clicou em um botão
+
+        const index = parseInt(target.dataset.index);
+
+        if (target.classList.contains('remove-item-btn')) {
+            // Remove o item do array 'cart'
+            cart.splice(index, 1);
+        } else if (target.classList.contains('qty-btn-cart')) {
+            const action = target.dataset.action;
+            if (action === 'increase') {
+                cart[index].quantity += 1;
+            } else if (action === 'decrease') {
+                cart[index].quantity -= 1;
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1); // Remove se a quantidade for 0 ou menos
+                }
+            }
+        }
+        updateCartUI();
+    });
+
+    // Gerar mensagem para WhatsApp
+    checkoutWhatsappBtn.addEventListener('click', () => {
+        let whatsappMessage = "Olá, Forja do Sabor! Gostaria de fazer o seguinte pedido:\n\n";
+        let total = 0;
+
+        cart.forEach(item => {
+            whatsappMessage += `🥗 ${item.name} (${item.size}) - ${item.quantity}x – R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n`;
+            total += item.price * item.quantity;
+        });
+
+        whatsappMessage += `\n💰 *Total Geral:* R$ ${total.toFixed(2).replace('.', ',')}`;
+        whatsappMessage += `\n\n📍 Meu nome é: [Seu Nome]`;
+        whatsappMessage += `\n🏠 Endereço para entrega: [Seu Endereço, Número, Bairro, Ponto de Referência]`;
+        whatsappMessage += `\n📱 Telefone para contato: [Seu Telefone]`;
+        whatsappMessage += `\n\n(Por favor, preencha seus dados acima para prosseguir com o pedido.)`;
+
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappUrl = `https://wa.me/5591985148050?text=${encodedMessage}`; // Seu número do WhatsApp
+
+        window.open(whatsappUrl, '_blank');
+    });
+
+    // Toggle do carrinho para mobile
+    mobileCartToggleBtn.addEventListener('click', () => {
+        cartSidebar.classList.toggle('open');
+    });
+
+    // Inicializa a UI do carrinho ao carregar a página
+    updateCartUI();
 });
