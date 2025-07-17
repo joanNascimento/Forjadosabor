@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Cardápio de Saladas - Forja do Sabor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="assets/imagens/logo-forja-do-sabor.jpg" alt="Forja do Sabor" class="logo-image">
+                <div class="logo">Forja do Sabor</div>
+            </div>
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="saladas.html">Saladas</a></li>
+                    <li><a href="gourmet.html">Gourmet</a></li>
+                    <li><a href="manicoba.html">Maniçoba</a></li>
+                    <li><a href="caldos.html">Caldos</a></li>
+                    <li><a href="drinks.html">Drinks</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="como-pedir.html">Como Pedir</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Ícone do Carrinho -->
+        <div class="cart-icon-header" onclick="openCartModal()">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count-header" id="cartCountHeader">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero saladas-hero">
+            <div class="hero-content">
+                <h1>Nosso Cardápio de Saladas</h1>
+                <p>Frescor, sabor e saúde em cada pote!</p>
+                <p class="disclaimer">Imagem meramente ilustrativa. Para saber mais sobre os produtos que estão saindo, siga o Instagram do @forja.do.sabor.</p>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="container">
+                <h2 class="section-title">🔸 CARDÁPIO - FORJA GOURMET 🔸</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA-PADRAO-FRANGO.jpg" alt="Forja do Pará (Frango)">
+                        <h3>🥗 FORJA DO PARÁ (FRANGO)</h3>
+                        <p>Mix de folhas, pepino, cenoura, cebola roxa, repolho roxo, tomate cereja, kani, ovo de codorna + frango grelhado ou desfiado, manga.</p>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <p>500ml R$ 15,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja do Pará (Frango)" data-price="15.00" data-size="500ml">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>750ml R$ 20,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja do Pará (Frango)" data-price="20.00" data-size="750ml">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>1000ml R$ 25,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja do Pará (Frango)" data-price="25.00" data-size="1000ml">Pedir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA-PADRAO-CAMARAOROSA.jpg" alt="Forja do Mar (Camarão)">
+                        <h3>🍤 FORJA DO MAR (CAMARÃO)</h3>
+                        <p>Mix de folhas, pepino, cenoura, cebola roxa, repolho roxo, tomate cereja, kani, ovo de codorna + camarão rosa salteado no azeite.</p>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <p>500ml R$ 20,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja do Mar (Camarão)" data-price="20.00" data-size="500ml">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>750ml R$ 25,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja do Mar (Camarão)" data-price="25.00" data-size="750ml">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>1000ml R$ 30,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja do Mar (Camarão)" data-price="30.00" data-size="1000ml">Pedir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA-PADRAO-ATUM.jpg" alt="Forja Sabor Atum">
+                        <h3>🐟 Forja Sabor Atum</h3>
+                        <p>Deliciosa salada gourmet com atum selecionado, frescor e tempero na medida certa!</p>
+                        <p class="ingredients">💚 Ingredientes sugeridos: Alface crespa | Pepino japonês | Tomate cereja | Cenoura ralada | Milho verde | Ovo cozido | Atum premium | Azeitonas | Mix de sementes | Molho especial da casa (à parte)</p>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <p>500ml R$ 20,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja Sabor Atum" data-price="20.00" data-size="500ml">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>750ml R$ 25,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja Sabor Atum" data-price="25.00" data-size="750ml">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>1000ml R$ 30,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Forja Sabor Atum" data-price="30.00" data-size="1000ml">Pedir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title">🧃 COMBOS COM SUCO 300ML</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA-FRANGO-GRELHADO.jpg" alt="Combo FORJA DO SERTÃO (Frango + Suco)">
+                        <h3>🥗 Combo FORJA DO SERTÃO (Frango + Suco)</h3>
+                        <p>Forja do Pará (Frango) + Suco 300ml</p>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <p>500ml + Suco R$ 20,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo FORJA DO SERTÃO (Frango + Suco)" data-price="20.00" data-size="500ml + Suco">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>750ml + Suco R$ 25,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo FORJA DO SERTÃO (Frango + Suco)" data-price="25.00" data-size="750ml + Suco">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>1000ml + Suco R$ 30,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo FORJA DO SERTÃO (Frango + Suco)" data-price="30.00" data-size="1000ml + Suco">Pedir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA-PADRAO-CAMARAOROSA.jpg" alt="Combo FORJA DO MAR (Camarão + Suco)">
+                        <h3>🍤 Combo FORJA DO MAR (Camarão + Suco)</h3>
+                        <p>Forja do Mar (Camarão) + Suco 300ml</p>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <p>500ml + Suco R$ 25,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo FORJA DO MAR (Camarão + Suco)" data-price="25.00" data-size="500ml + Suco">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>750ml + Suco R$ 30,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo FORJA DO MAR (Camarão + Suco)" data-price="30.00" data-size="750ml + Suco">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>1000ml + Suco R$ 35,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo FORJA DO MAR (Camarão + Suco)" data-price="35.00" data-size="1000ml + Suco">Pedir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA-PADRAO-ATUM.jpg" alt="Combo Forja Sabor Atum">
+                        <h3>🐟 Combo Forja Sabor Atum</h3>
+                        <p>Deliciosa salada gourmet com atum selecionado + Suco 300ml</p>
+                        <p class="ingredients">💚 Ingredientes sugeridos: Alface crespa | Pepino japonês | Tomate cereja | Cenoura ralada | Milho verde | Ovo cozido | Atum premium | Azeitonas | Mix de sementes | Molho especial da casa (à parte)</p>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <p>500ml + Suco R$ 25,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo Forja Sabor Atum" data-price="25.00" data-size="500ml + Suco">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>750ml + Suco R$ 30,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo Forja Sabor Atum" data-price="30.00" data-size="750ml + Suco">Pedir</button>
+                            </div>
+                            <div class="price-option">
+                                <p>1000ml + Suco R$ 35,00</p>
+                                <div class="quantity-control">
+                                    <button class="decrease-quantity">-</button>
+                                    <input type="number" value="0" min="0" class="item-quantity">
+                                    <button class="increase-quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-name="Combo Forja Sabor Atum" data-price="35.00" data-size="1000ml + Suco">Pedir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>✨ Dica da Forja:</h3>
+                    <p>Despeje o molho, feche o pote e chacoalhe bem antes de consumir para sentir todo o sabor da combinação!</p>
+                </div>
+
+                <div class="info-block">
+                    <h3>📦 Frescor, sabor e saúde em cada pote!</h3>
+                    <p>📲 Encomendas via (91)98514-8050 ou Instagram: @forja.do.sabor</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="container">
+                <h2 class="section-title">Inspirações de Saladas</h2>
+                <p class="disclaimer">Imagem meramente ilustrativa. Para saber mais sobre os produtos que estão saindo, siga o Instagram do @forja.do.sabor.</p>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA1.jpg" alt="Salada de Frango">
+                        <h3>Salada de Frango</h3>
+                    </div>
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA2.jpg" alt="Salada de Camarão">
+                        <h3>Salada de Camarão</h3>
+                    </div>
+                    <div class="menu-item">
+                        <img src="assets/imagens/SALADA3.jpg" alt="Salada de Atum">
+                        <h3>Salada de Atum</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fab fa-whatsapp"></i> (91) 98514-8050</p>
+                    <p><i class="fab fa-instagram"></i> @forja.do.sabor</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Segunda a Domingo: 17h às 23h</p>
+                    <p><small>*Horários podem variar em feriados</small></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Entrega</h3>
+                    <p>Taxa de entrega: A partir de R$ 5,00</p>
+                    <p>Tábuas grandes: Prazo de 24h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Forja do Sabor. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botões Flutuantes -->
+    <div class="float-buttons">
+        <a href="https://www.instagram.com/forja.do.sabor?igsh=MXFpMnN5ODhmOG0zbA==" class="instagram-float" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/5591985148050" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+    <!-- Botão Flutuante do Carrinho -->
+    <div class="cart-float-button">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Seu Carrinho</h2>
+            <ul id="cartItemsList" class="cart-items-list">
+                <!-- Itens do carrinho serão adicionados aqui via JS -->
+            </ul>
+            <div class="cart-total">Total: R$ <span id="cartTotal">0.00</span></div>
+            <button id="checkoutButton" class="checkout-button">Finalizar Pedido (WhatsApp)</button>
+        </div>
+    </div>
+
+
